@@ -10,10 +10,12 @@ import {
   Box 
 } from '@mui/material';
 import CookieIcon from '@mui/icons-material/Cookie';
+import { useTranslation } from 'react-i18next';
 
 const COOKIE_CONSENT_KEY = 'portfolioCookieConsent';
 
 const CookieConsent: React.FC = memo(() => {
+  const { t } = useTranslation();
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
@@ -49,16 +51,16 @@ const CookieConsent: React.FC = memo(() => {
         <Box display="flex" alignItems="center" gap={1}>
           <CookieIcon color="primary" />
           <Typography variant="h5" component="div">
-            Polityka Cookies
+            {t('cookies.title')}
           </Typography>
         </Box>
       </DialogTitle>
       <DialogContent>
         <DialogContentText id="cookie-consent-description" sx={{ mb: 2 }}>
-          Ta strona używa plików cookies, aby zapewnić najlepsze doświadczenie użytkownika. Cookies pomagają nam analizować ruch na stronie, dostosowywać treści i zapewniać funkcje mediów społecznościowych.
+          {t('cookies.description')}
         </DialogContentText>
         <DialogContentText>
-          Klikając "Akceptuję", wyrażasz zgodę na używanie przez nas cookies zgodnie z naszą polityką prywatności.
+          {t('cookies.consent')}
         </DialogContentText>
       </DialogContent>
       <DialogActions sx={{ p: 3, pt: 1 }}>
@@ -69,7 +71,7 @@ const CookieConsent: React.FC = memo(() => {
           size="large" 
           fullWidth
         >
-          Akceptuję
+          {t('cookies.accept')}
         </Button>
       </DialogActions>
     </Dialog>

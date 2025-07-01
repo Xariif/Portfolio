@@ -1,14 +1,8 @@
-body {
-  margin: 0;
-  min-width: 320px;
-  min-height: 100vh;
-  background: #F5F7FA;
-}
+/* Import pixel icon library CSS early to prevent FOUC */
+@import '@hackernoon/pixel-icon-library/fonts/iconfont.css';
 
 #root {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
-
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');

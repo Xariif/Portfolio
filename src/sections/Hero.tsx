@@ -1,5 +1,6 @@
-import { Avatar, Box, Button, Stack, Typography } from "@mui/material";
+import { Box, Button, Stack, Typography, useTheme, useMediaQuery } from "@mui/material";
 import React, { memo, useCallback } from "react";
+import { useTranslation } from "react-i18next";
 
 type HeroProps = {
   onViewWork?: () => void;
@@ -7,6 +8,9 @@ type HeroProps = {
 };
 
 const Hero: React.FC<HeroProps> = memo(({ onViewWork, onAboutMe }) => {
+  const { t } = useTranslation();
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('md'));
   const handleViewWork = useCallback(() => {
     onViewWork?.();
   }, [onViewWork]);
@@ -27,25 +31,12 @@ const Hero: React.FC<HeroProps> = memo(({ onViewWork, onAboutMe }) => {
         px: 2,
       }}
     >
-      <Box
-        sx={{
-          width: 150,
-          height: 150,
-          overflow: "hidden",
-          mb: 3,
-          border: "4px solid #FCE600",
-          boxShadow: 4,
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-        }}
-      >
-        <Avatar
+    
+        <img
           alt="Jakub Filiks"
           src="/profile_photo.jpeg"
-          sx={{ width: 160, height: 160 }}
-        />
-      </Box>
+          style={{ width: 200, height:200 }}
+        />     
       <Typography
         variant="h1"
         sx={{
@@ -55,33 +46,23 @@ const Hero: React.FC<HeroProps> = memo(({ onViewWork, onAboutMe }) => {
           fontSize: { xs: "2.5rem", md: "3.5rem" },
         }}
       >
-        Jakub Filiks
+        {t('hero.title')}
       </Typography>
       <Typography
         variant="h5"
         color="text.secondary"
         sx={{ mb: 2, fontWeight: 400 }}
       >
-        Fullstack Developer · C# · React · SQL · MongoDB
+        {t('hero.subtitle')}
       </Typography>
       <Typography
         color="text.secondary"
         sx={{ maxWidth: 600, mb: 4, mx: "auto" }}
       >
-        I am a fullstack developer with over 1.5 years of commercial experience
-        working with .NET, React, MongoDB, and SQL. I build end-to-end web
-        applications – from backend architecture to modern user interfaces.
-
-        I work on a shopping center management system (Trackeo) and develop
-        open-source projects – including a tenant turnover analytics app (C# /
-        PostgreSQL / React).
-
-        In my free time, I explore cloud technologies (Oracle Cloud), DevOps, and
-        automation. I value clean code, thorough documentation, and collaborative
-        team development.
+        {t('hero.description')}
       </Typography>
       <Stack
-        direction="row"
+        direction={isMobile? "column" : "row"}
         spacing={2}
         sx={{
           width: "auto",
@@ -91,12 +72,12 @@ const Hero: React.FC<HeroProps> = memo(({ onViewWork, onAboutMe }) => {
         }}
       >
         <Button
-          variant="contained"
+          variant="outlined"
           size="large"
           onClick={handleAboutMe}
           endIcon={<i className="hn hn-info-circle"></i>}
         >
-          About Me
+          {t('hero.aboutMe')}
         </Button>
         <Button
           variant="outlined"
@@ -105,7 +86,7 @@ const Hero: React.FC<HeroProps> = memo(({ onViewWork, onAboutMe }) => {
           color="success"
           endIcon={<i className="hn hn-eye"></i>}
         >
-          View My Work
+          {t('hero.viewWork')}
         </Button>
         <Button
           variant="outlined"
@@ -116,7 +97,7 @@ const Hero: React.FC<HeroProps> = memo(({ onViewWork, onAboutMe }) => {
           rel="noopener noreferrer"
           endIcon={<i className="hn hn-github"></i>}
         >
-          GitHub
+          {t('hero.github')}
         </Button>
         <Button
           variant="outlined"
@@ -126,7 +107,7 @@ const Hero: React.FC<HeroProps> = memo(({ onViewWork, onAboutMe }) => {
           color="info"
           endIcon={<i className="hn hn-download"></i>}
         >
-          Download CV
+          {t('hero.downloadCV')}
         </Button>
       </Stack>
     </Box>

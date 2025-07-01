@@ -1,206 +1,243 @@
 import { createTheme } from '@mui/material/styles';
 
-// Create a theme instance with Pac-Man inspired colors
-// #EE05F2 - Pink/Magenta (Similar to Pinky ghost)
-// #24F205 - Bright Green (Similar to Inky ghost)
-// #FCE600 - Yellow (Pac-Man color)
-// #11AFFE - Blue (Similar to maze color/Blinky ghost)
-// #F20505 - Red (Similar to Clyde ghost)
-
 const theme = createTheme({
-  palette: {
-    mode: 'light',
-    primary: {
-      main: '#FCE600', // Pac-Man Yellow
-      light: '#FFF059',
-      dark: '#E6C800',
-      contrastText: '#000', // Black text for contrast with yellow
-    },
-    secondary: {
-      main: '#EE05F2', // Pink/Magenta (Pinky)
-      light: '#FF4BFF',
-      dark: '#C700C9',
-      contrastText: '#fff',
-    },
-    background: {
-      default: '#000000', // Classic Pac-Man black background
-      paper: '#111111', // Slightly lighter than black for paper elements
-    },
-    text: {
-      primary: '#FCE600', // Pac-Man Yellow for primary text
-      secondary: '#FFFFFF', // White for secondary text
-    },
-    success: {
-      main: '#24F205', // Bright Green (Inky)
-    },
-    warning: {
-      main: '#FCE600', // Pac-Man Yellow
-    },
-    error: {
-      main: '#F20505', // Red (Clyde)
-    },
-    info: {
-      main: '#11AFFE', // Blue (Blinky/Maze)
+  colorSchemes: {
+    light: true,
+    dark: true, 
+  },
+  breakpoints: {
+    values: {
+      xs: 0,
+      sm: 600,
+      md: 960,
+      lg: 1280,
+      xl: 1920,
     },
   },
+  palette: {
+    mode: 'light', // Dark mode for cyberpunk atmosphere
+    primary: {
+      main: '#89ABE3',
+    },
+    secondary: {
+      main: '#EA738D',
+    },
+    success: {
+      main: '#22bb33',
+    },
+    error: {
+      main: '#bb2124',
+    },
+    warning: {
+      main: '#f0ad4e',
+    },
+    info: {
+      main: '#5bc0de',
+    }
+  },
   typography: {
-    fontFamily: '"Press Start 2P", "Roboto", "Helvetica", "Arial", sans-serif',
+    fontFamily: '"Space Grotesk", "Space Grotesk Placeholder", sans-serif',
     h1: {
-      fontFamily: '"Press Start 2P", "Roboto", "Helvetica", "Arial", sans-serif',
-      fontWeight: 400, // Pixel fonts typically look better without extra weight
-      letterSpacing: '0px',
-      fontSize: '2.5rem',
-      lineHeight: 1.5, // Better spacing for pixel fonts
+      fontWeight: 700,
+      letterSpacing: '3px',
+      fontSize: '3rem',
+      lineHeight: 1.2,
     },
     h2: {
-      fontFamily: '"Press Start 2P", "Roboto", "Helvetica", "Arial", sans-serif',
-      fontWeight: 400,
-      letterSpacing: '0px',
-      fontSize: '1.8rem',
-      lineHeight: 1.5,
+      fontWeight: 600,
+      letterSpacing: '2px',
+      fontSize: '2.2rem',
+      lineHeight: 1.3,
+      color: 'primary.main',
     },
     h3: {
-      fontFamily: '"Press Start 2P", "Roboto", "Helvetica", "Arial", sans-serif',
-      fontWeight: 400,
-      fontSize: '1.4rem',
-      lineHeight: 1.5,
+      fontWeight: 500,
+      fontSize: '1.8rem',
+      lineHeight: 1.4,
+      letterSpacing: '1.5px',
+      color: 'secondary.main',
     },
     h4: {
-      fontFamily: '"Press Start 2P", "Roboto", "Helvetica", "Arial", sans-serif',
-      fontWeight: 400,
-      fontSize: '1.2rem',
-      lineHeight: 1.5,
+      fontWeight: 500,
+      fontSize: '1.4rem',
+      lineHeight: 1.4,
+      letterSpacing: '1px',
+      color: 'success.main',
     },
     h5: {
-      fontFamily: '"Press Start 2P", "Roboto", "Helvetica", "Arial", sans-serif',
       fontWeight: 400,
-      fontSize: '1rem',
+      fontSize: '1.1rem',
       lineHeight: 1.5,
+      letterSpacing: '0.8px',
+      color: 'info.main',
     },
     h6: {
-      fontFamily: '"Press Start 2P", "Roboto", "Helvetica", "Arial", sans-serif',
       fontWeight: 400,
-      fontSize: '0.9rem',
+      fontSize: '1rem',
       lineHeight: 1.5,
+      letterSpacing: '0.5px',
+      color: 'text.primary',
     },
     body1: {
-      fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif', // Keep body text in normal font for readability
       fontSize: '1rem',
       lineHeight: 1.7,
+      letterSpacing: '0.3px',
+      fontFamily: '"Space Grotesk", "Space Grotesk Placeholder", sans-serif',
     },
     body2: {
-      fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
       fontSize: '0.9rem',
-      lineHeight: 1.7,
+      lineHeight: 1.6,
+      letterSpacing: '0.2px',
+      fontFamily: '"Space Grotesk", "Space Grotesk Placeholder", sans-serif',
     },
     button: {
-      fontFamily: '"Press Start 2P", "Roboto", "Helvetica", "Arial", sans-serif',
-      textTransform: 'none',
-      fontWeight: 400,
-      letterSpacing: '0px',
-      fontSize: '0.8rem',
+      textTransform: 'uppercase',
+      fontWeight: 600,
+      letterSpacing: '2px',
+      fontSize: '0.9rem',
+      fontFamily: '"Space Grotesk", "Space Grotesk Placeholder", sans-serif',
     },
   },
   shape: {
-    borderRadius: 8, // More pixel-art style with sharper corners
+    borderRadius: 16
   },
-  shadows: [
-    'none',
-    '0px 2px 8px 0px rgba(252, 230, 0, 0.15)', // Custom shadow using Pac-Man yellow
-    '0px 4px 24px 0px rgba(252, 230, 0, 0.18)',
-    '0px 4px 24px 0px rgba(252, 230, 0, 0.18)',
-    '0px 4px 24px 0px rgba(252, 230, 0, 0.18)',
-    '0px 4px 24px 0px rgba(252, 230, 0, 0.18)',
-    '0px 4px 24px 0px rgba(252, 230, 0, 0.18)',
-    '0px 4px 24px 0px rgba(252, 230, 0, 0.18)',
-    '0px 4px 24px 0px rgba(252, 230, 0, 0.18)',
-    '0px 4px 24px 0px rgba(252, 230, 0, 0.18)',
-    '0px 4px 24px 0px rgba(252, 230, 0, 0.18)',
-    '0px 4px 24px 0px rgba(252, 230, 0, 0.18)',
-    '0px 4px 24px 0px rgba(252, 230, 0, 0.18)',
-    '0px 4px 24px 0px rgba(252, 230, 0, 0.18)',
-    '0px 4px 24px 0px rgba(252, 230, 0, 0.18)',
-    '0px 4px 24px 0px rgba(252, 230, 0, 0.18)',
-    '0px 4px 24px 0px rgba(252, 230, 0, 0.18)',
-    '0px 4px 24px 0px rgba(252, 230, 0, 0.18)',
-    '0px 4px 24px 0px rgba(252, 230, 0, 0.18)',
-    '0px 4px 24px 0px rgba(252, 230, 0, 0.18)',
-    '0px 4px 24px 0px rgba(252, 230, 0, 0.18)',
-    '0px 4px 24px 0px rgba(252, 230, 0, 0.18)',
-    '0px 4px 24px 0px rgba(252, 230, 0, 0.18)',
-    '0px 4px 24px 0px rgba(252, 230, 0, 0.18)',
-    '0px 4px 24px 0px rgba(252, 230, 0, 0.18)'
-  ],
   components: {
     MuiButton: {
       styleOverrides: {
         root: {
-          borderRadius: 8, // More pixel-art style with sharper corners
-          fontWeight: 400,
-          boxShadow: '0px 2px 8px 0px rgba(252, 230, 0, 0.15)',
-          transition: 'all 0.2s cubic-bezier(.4,0,.2,1)',
-          padding: '12px 20px',
+          fontWeight: 600,
+          padding: '14px 28px',
           margin: '4px',
-          fontSize: '0.8rem',
-          letterSpacing: '0px',
-        },
-        containedPrimary: {
-          background: '#FCE600', // Solid Pac-Man yellow
-          color: '#000',
+          fontSize: '0.9rem',
+          letterSpacing: '2px',
+          textTransform: 'uppercase',
+          border: '1px solid transparent',
+          fontFamily: '"Space Grotesk", "Space Grotesk Placeholder", sans-serif',
+          transition: 'all 0.3s ease-in-out',
           '&:hover': {
-            background: '#FFF059', // Lighter yellow on hover
             transform: 'translateY(-2px)',
-            boxShadow: '0px 4px 12px rgba(252, 230, 0, 0.25)',
-          }
+          },
         },
-        outlined: {
-          borderWidth: '2px', // Thicker border for pixel art style
+
+        outlined: ({ theme }) => ({
+          border: '2px solid',
+          borderColor: theme.palette.primary.main,
+          color: theme.palette.primary.main,
+          background: 'transparent',
+          backdropFilter: 'blur(10px)',
+          transition: 'all 0.3s ease-in-out',
           '&:hover': {
-            borderWidth: '2px',
+            backgroundColor: theme.palette.primary.main,
+            color: theme.palette.primary.contrastText,
             transform: 'translateY(-2px)',
+            boxShadow: `0 8px 25px ${theme.palette.primary.main}40`,
+          },
+          '&.MuiButton-outlinedSecondary': {
+            borderColor: theme.palette.secondary.main,
+            color: theme.palette.secondary.main,
+            '&:hover': {
+              backgroundColor: theme.palette.secondary.main,
+              color: theme.palette.secondary.contrastText,
+              boxShadow: `0 8px 25px ${theme.palette.secondary.main}40`,
+            },
+          },
+          '&.MuiButton-outlinedSuccess': {
+            borderColor: theme.palette.success.main,
+            color: theme.palette.success.main,
+            '&:hover': {
+              backgroundColor: theme.palette.success.main,
+              color: theme.palette.success.contrastText,
+              boxShadow: `0 8px 25px ${theme.palette.success.main}40`,
+            },
+          },
+          '&.MuiButton-outlinedInfo': {
+            borderColor: theme.palette.info.main,
+            color: theme.palette.info.main,
+            '&:hover': {
+              backgroundColor: theme.palette.info.main,
+              color: theme.palette.info.contrastText,
+              boxShadow: `0 8px 25px ${theme.palette.info.main}40`,
+            },
           }
-        },
+        }),
       },
     },
     MuiPaper: {
       styleOverrides: {
-        root: {
-          borderRadius: 8, // Sharper corners for pixel style
-          border: '2px solid rgba(252, 230, 0, 0.4)', // Thicker borders
-          boxShadow: '4px 4px 0px rgba(252, 230, 0, 0.2)', // Pixel-style offset shadow
-        },
+        root: ({ theme }) => ({
+          borderRadius: 12,
+          position: 'relative',
+          overflow: 'hidden',
+          backgroundColor: theme.palette.mode === 'light' ? '#f5f5f5' : theme.palette.background.paper,
+          '&:before': {
+            content: '""',
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            right: 0,
+            height: '1px',
+            opacity: 0.6,
+          },
+        }),
+
       },
     },
-    MuiAppBar: {
+    MuiTextField: {
       styleOverrides: {
-        root: {
-          background: '#000000',
-          boxShadow: '0px 2px 0px #FCE600', // Pixel-style bottom border shadow
-          borderBottom: '2px solid #FCE600',
-        },
-      },
-    },
-    MuiAvatar: {
-      styleOverrides: {
-        root: {
-          border: '2px solid #FCE600',
-          borderRadius: '8px', // Square-ish for pixel style
-        },
+        root: ({ theme }) => ({
+          '& .MuiOutlinedInput-root': {
+            borderRadius: 8,
+            background: theme.palette.background.paper,
+            backgroundOpacity: 0.6,
+            backdropFilter: 'blur(10px)',
+            '& fieldset': {
+              borderColor: theme.palette.primary.main,
+              borderWidth: '1px',
+            },
+          },
+          '& .MuiInputLabel-root': {
+            color: theme.palette.text.secondary,
+            fontFamily: '"Space Grotesk", "Space Grotesk Placeholder", sans-serif',
+          },
+          '& .MuiInputLabel-root.Mui-focused': {
+            color: theme.palette.primary.main,
+          },
+        }),
       },
     },
     MuiChip: {
       styleOverrides: {
-        root: {
-          backgroundColor: 'rgba(252, 230, 0, 0.1)',
-          color: '#FCE600',
-          borderColor: 'rgba(252, 230, 0, 0.3)',
-          borderRadius: '4px', // More angular for pixel style
-          fontFamily: '"Press Start 2P", "Roboto", "Helvetica", "Arial", sans-serif',
-          fontSize: '0.7rem',
-        },
+        root: ({ theme }) => ({
+          borderRadius: 16,
+          border: '1px solid',
+          borderColor: theme.palette.primary.main,
+          fontFamily: '"Space Grotesk", "Space Grotesk Placeholder", sans-serif',
+          fontSize: '0.75rem',
+          fontWeight: 500,
+          backgroundOpacity: 0.1,
+          backdropFilter: 'blur(10px)',
+          color: theme.palette.text.primary,
+        }),
       },
     },
-  },
+    MuiTooltip: {
+      styleOverrides: {
+        tooltip: ({ theme }) => ({
+          color: theme.palette.primary.main,
+          border: '1px solid',
+          borderColor: theme.palette.primary.main,
+          borderRadius: 8,
+          fontSize: '0.75rem',
+          fontFamily: '"Space Grotesk", "Space Grotesk Placeholder", sans-serif',
+          backdropFilter: 'blur(20px)',
+          padding: '8px 12px',
+        }),
+        arrow: ({ theme }) => ({
+          color: theme.palette.primary.main,
+        }),
+      },
+    },
+  }
 });
 
 export default theme;
