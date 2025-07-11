@@ -122,8 +122,6 @@ const Skills = memo(() => {
           display: 'grid',
           gridTemplateColumns: gridColumns,
           gap: 3,
-          maxWidth: 1000,
-          mx: 'auto'
         }}
       >
         {categories.map(({ key, skills, title }) => (

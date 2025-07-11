@@ -7,17 +7,21 @@ import theme from "./theme/theme";
 
 const App = lazy(() => import("./App"));
 
+console.log(theme)
+
 createRoot(document.getElementById("root")!).render(
-  <StrictMode>
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
-      <Suspense fallback={
-        <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '100vh' }}>
-          <CircularProgress />
-        </Box>
-      }>
-        <App />
-      </Suspense>
-    </ThemeProvider>
-  </StrictMode>
+	<StrictMode>
+		<ThemeProvider theme={theme} defaultMode='light'>
+			<CssBaseline />
+			<Suspense
+				fallback={
+					<Box sx={{ display: "flex", justifyContent: "center", alignItems: "center", minHeight: "100vh" }}>
+						<CircularProgress />
+					</Box>
+				}
+			>
+				<App />
+			</Suspense>
+		</ThemeProvider>
+	</StrictMode>
 );

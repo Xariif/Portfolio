@@ -1,6 +1,7 @@
-import { Box, CircularProgress, useTheme } from "@mui/material";
-import { lazy, Suspense } from "react";
-import NavigationBar from "./components/NavigationBar";
+import { Box, Container } from "@mui/material";
+import { lazy } from "react";
+import PathBackground from "./components/PathBackground";
+const NavigationBar = lazy(() => import("./components/NavigationBar"));
 
 const Hero = lazy(() => import("./sections/Hero"));
 const About = lazy(() => import("./sections/About"));
@@ -15,12 +16,12 @@ const SECTION_IDS = {
 	skills: "skills",
 	projects: "projects",
 	contact: "contact",
+	backgroundMap: "backgroundMap"
 };
 
 function App() {
 	// Adjust this value to match your NavigationBar height
 	const NAVBAR_HEIGHT = 72;
-	const theme = useTheme();
 
 	type SectionProps = {
 		id: string;
@@ -37,7 +38,7 @@ function App() {
 				alignItems: "center",
 				justifyContent: "center",
 				scrollMarginTop: `${NAVBAR_HEIGHT + 16}px`,
-				py: 8,
+				py: 8
 			}}
 		>
 			{children}
@@ -45,15 +46,18 @@ function App() {
 	);
 
 	return (
-		< Box >
+		<Container maxWidth="lg" disableGutters sx={{ position: "relative", overflow: "hidden" }}>
 			<CookieConsent />
 			<NavigationBar />
-			<Section id={SECTION_IDS.hero} minHeight={`calc(100vh - ${NAVBAR_HEIGHT}px)`}>
-				<Hero />
+
+			<Section id={SECTION_IDS.hero} minHeight={"max-content"}>
+				<div style={{ display: "inline-flex", flexDirection: "column", alignItems: "center", marginLeft:'auto' }}>
+					<Hero />
+					<About />
+					<PathBackground />
+				</div>
 			</Section>
-			<Section id={SECTION_IDS.about}>
-				<About />
-			</Section>
+
 			<Section id={SECTION_IDS.skills}>
 				<Skills />
 			</Section>
@@ -63,7 +67,7 @@ function App() {
 			<Section id={SECTION_IDS.contact}>
 				<Contact />
 			</Section>
-		</Box>
+		</Container>
 	);
 }
 
