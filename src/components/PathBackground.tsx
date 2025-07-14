@@ -16,6 +16,44 @@ const startPoints = [
 	{ x: 450, y: 100 }
 ];
 
+const AnimatedIcon = ({ 
+    point, 
+    children, 
+    scale = 1.5, 
+    specialAnimation = false 
+}: { 
+    point: { x: number; y: number };
+    children: React.ReactNode;
+    scale?: number;
+    specialAnimation?: boolean;
+}) => {
+    const theme = useTheme();
+    
+    return (
+        <motion.div
+            initial={{ opacity: 0, scale: specialAnimation ? 0.5 : 0.7 }}
+            animate={{ opacity: 1, scale }}
+            whileHover={{ scale: scale + 0.3, boxShadow: "0 8px 32px rgba(102,187,106,0.5)" }}
+            transition={{ duration: 0.5, type: "spring", stiffness: 200 }}
+            style={{
+                position: "absolute",
+                top: point.y - 18,
+                left: point.x - 18,
+                zIndex: 2,
+                backgroundColor: theme.palette.background.default,
+                borderRadius: "50%",
+                padding: 8,
+                cursor: "pointer",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center"
+            }}
+        >
+            {children}
+        </motion.div>
+    );
+};
+
 const PathBackground = () => {
 	const [points, setPoints] = useState<{ x: number; y: number }[]>([]);
 	const theme = useTheme();
@@ -29,77 +67,50 @@ const PathBackground = () => {
 	return (
 		<div style={{opacity:.4, position: "absolute", top: 0, left: 0, width: "100%", height: "100%", pointerEvents: "none"}}>
 			<svg width={600} height={1000} style={{ position: "absolute", top: 0, left: 0 }}>
+				<defs>
+					<filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+						<feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+						<feMerge>
+							<feMergeNode in="coloredBlur"/>
+							<feMergeNode in="SourceGraphic"/>
+						</feMerge>
+					</filter>
+				</defs>
 				{points.slice(0, -1).map((_, i) => {
 					const segmentD = [`M ${points[i].x} ${points[i].y}`, `L ${points[i + 1].x} ${points[i + 1].y}`].join(" ");
-					return <motion.path key={i} d={segmentD} stroke={green[400]} strokeWidth={3} fill="none" initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} />;
+					return (
+						<motion.path
+							key={i}
+							d={segmentD}
+							stroke={green[400]}
+							strokeWidth={3}
+							fill="none"
+							filter="url(#glow)"
+							initial={{ pathLength: 0 }}
+							animate={{ pathLength: 1 }}
+						/>
+					);
 				})}
 			</svg>
 			{points[0] && (
-				<motion.div
-					initial={{ opacity: 0 }}
-					animate={{ opacity: 1 }}
-					transition={{ duration: 0.5 }}
-					style={{
-						position: "absolute",
-						top: points[0].y - 12,
-						left: points[0].x - 12,
-						zIndex: 1,
-						scale: 1.5,
-						backgroundColor: theme.palette.background.default
-					}}
-				>
+				<AnimatedIcon point={points[0]}>
 					<ComputerIcon />
-				</motion.div>
+				</AnimatedIcon>
 			)}
 			{points[1] && (
-				<motion.div
-					initial={{ opacity: 0 }}
-					animate={{ opacity: 1 }}
-					transition={{ duration: 0.5 }}
-					style={{
-						position: "absolute",
-						top: points[1].y - 12,
-						left: points[1].x - 12,
-						zIndex: 1,
-						scale: 1.5,
-						backgroundColor: theme.palette.background.default
-					}}
-				>
+				<AnimatedIcon point={points[1]}>
 					<LandscapeRounded />
-				</motion.div>
+				</AnimatedIcon>
 			)}
 			{points[3] && (
-				<motion.div
-					initial={{ opacity: 0 }}
-					animate={{ opacity: 1 }}
-					transition={{ duration: 0.5 }}
-					style={{
-						position: "absolute",
-						top: points[3].y - 12,
-						left: points[3].x - 12,
-						zIndex: 1,
-						scale: 1.5,
-						backgroundColor: theme.palette.background.default
-					}}
-				>
+				<AnimatedIcon point={points[3]}>
 					<SchoolRounded />
-				</motion.div>
+				</AnimatedIcon>
 			)}
 			{points[5] && (
-				<motion.div
-					initial={{ opacity: 0, scale: 0.5 }}
-					animate={{ opacity: 1, scale: 1.8 }}
-					transition={{ duration: 0.5, type: "spring", stiffness: 200 }}
-					style={{
-						position: "absolute",
-						top: points[5].y - 12,
-						left: points[5].x - 12,
-						zIndex: 1,
-						backgroundColor: theme.palette.background.default
-					}}
-				>
+				<AnimatedIcon point={points[5]} scale={1.8} specialAnimation={true}>
 					<FlagRounded sx={{ color: "#FFD700" }} />
-				</motion.div>
+				</AnimatedIcon>
 			)}
 		</div>
 	);
