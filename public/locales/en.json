@@ -1,0 +1,172 @@
+{
+  "basics": {
+    "name": "John Doe",
+    "label": "Senior Software Engineer",
+    "email": "john.doe@example.com",
+    "phone": "(123) 456-7890",
+    "summary": "Experienced software engineer with a passion for developing innovative programs that expedite the efficiency and effectiveness of organizational success."
+  },
+  "certifications": {
+    "title": "Certifications",
+    "aws": "AWS Certified Developer",
+    "azure": "Microsoft Certified: Azure Fundamentals",
+    "mongodb": "MongoDB Certified Developer"
+  },
+  "education": {
+    "title": "Education",
+    "degree": "Bachelor of Science in Computer Science",
+    "university": "University of Example",
+    "year": "2012"
+  },
+  "experience": {
+    "title": "Work Experience",
+    "jobs": [
+      {
+        "company": "Tech Solutions",
+        "position": "Senior Software Engineer",
+        "years": "2018 - Present",
+        "responsibilities": [
+          "Developing web applications using React and Node.js",
+          "Managing AWS services for application deployment",
+          "Collaborating with cross-functional teams to define and design new features"
+        ]
+      },
+      {
+        "company": "Innovatech",
+        "position": "Software Engineer",
+        "years": "2015 - 2018",
+        "responsibilities": [
+          "Designed and implemented RESTful APIs",
+          "Worked with MongoDB for database management",
+          "Participated in code reviews and maintained code quality standards"
+        ]
+      },
+      {
+        "company": "Web Solutions",
+        "position": "Junior Developer",
+        "years": "2012 - 2015",
+        "responsibilities": [
+          "Assisted in the development of client-side applications",
+          "Conducted testing and debugging of applications",
+          "Collaborated with designers to improve user experience"
+        ]
+      }
+    ]
+  },
+  "skills": {
+    "title": "Skills",
+    "programmingLanguages": [
+      "JavaScript",
+      "Python",
+      "Java"
+    ],
+    "frameworks": [
+      "React",
+      "Node.js",
+      "Express"
+    ],
+    "databases": [
+      "MongoDB",
+      "MySQL",
+      "PostgreSQL"
+    ],
+    "tools": [
+      "Git",
+      "Docker",
+      "Jenkins"
+    ],
+    "cloudServices": [
+      "AWS",
+      "Azure",
+      "Google Cloud"
+    ]
+  },
+  "projects": {
+    "title": "Projects",
+    "personalProjects": [
+      {
+        "name": "Portfolio Website",
+        "description": "A personal portfolio website to showcase my projects and skills.",
+        "technologies": [
+          "HTML",
+          "CSS",
+          "JavaScript"
+        ],
+        "link": "https://www.johndoe.com"
+      },
+      {
+        "name": "Weather App",
+        "description": "A web application that provides weather forecasts using a third-party API.",
+        "technologies": [
+          "React",
+          "Node.js",
+          "MongoDB"
+        ],
+        "link": "https://www.johndoe.com/weather-app"
+      }
+    ],
+    "professionalProjects": [
+      {
+        "name": "E-commerce Platform",
+        "description": "Developed a full-stack e-commerce platform with user authentication, product management, and order processing.",
+        "technologies": [
+          "React",
+          "Node.js",
+          "AWS",
+          "MongoDB"
+        ],
+        "link": "https://www.techsolutions.com/e-commerce-platform"
+      },
+      {
+        "name": "Project Management Tool",
+        "description": "Created a project management tool with features like task assignment, progress tracking, and team collaboration.",
+        "technologies": [
+          "Angular",
+          "Node.js",
+          "MySQL",
+          "Docker"
+        ],
+        "link": "https://www.innovatech.com/project-management-tool"
+      }
+    ]
+  },
+  "volunteer": {
+    "title": "Volunteer Experience",
+    "experiences": [
+      {
+        "organization": "Code for Good",
+        "role": "Volunteer Developer",
+        "years": "2019 - Present",
+        "responsibilities": [
+          "Developing and maintaining the organization's website",
+          "Creating web applications for local non-profits",
+          "Teaching coding workshops for beginners"
+        ]
+      },
+      {
+        "organization": "Tech for All",
+        "role": "Mentor",
+        "years": "2018 - Present",
+        "responsibilities": [
+          "Mentoring junior developers and interns",
+          "Conducting technical interviews for new recruits",
+          "Organizing hackathons and coding competitions"
+        ]
+      }
+    ]
+  },
+  "interests": {
+    "title": "Interests",
+    "hobbies": [
+      "Open-source contribution",
+      "Tech blogging",
+      "Gaming",
+      "Hiking"
+    ],
+    "languages": [
+      "English",
+      "Spanish",
+      "Mandarin"
+    ]
+  }
+}

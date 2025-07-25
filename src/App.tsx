@@ -1,6 +1,7 @@
-import { Box, Container } from "@mui/material";
+import { Box, Container, useMediaQuery, useTheme } from "@mui/material";
 import { lazy } from "react";
 import PathBackground from "./components/PathBackground";
+import Certifications from "./sections/Certifications";
 const NavigationBar = lazy(() => import("./components/NavigationBar"));
 
 const Hero = lazy(() => import("./sections/Hero"));
@@ -21,7 +22,10 @@ const SECTION_IDS = {
 
 function App() {
 	// Adjust this value to match your NavigationBar height
-	const NAVBAR_HEIGHT = 72;
+	const NAVBAR_HEIGHT = 56;
+
+	const theme = useTheme();
+	const isMobile = useMediaQuery(theme.breakpoints.down("md"));
 
 	type SectionProps = {
 		id: string;
@@ -33,7 +37,7 @@ function App() {
 		<Box
 			id={id}
 			sx={{
-				minHeight,
+				minHeight: minHeight || "100vh",
 				display: "flex",
 				alignItems: "center",
 				justifyContent: "center",
@@ -46,20 +50,31 @@ function App() {
 	);
 
 	return (
-		<Container maxWidth="lg" disableGutters sx={{ position: "relative", overflow: "hidden" }}>
+		<Container disableGutters sx={{ position: "relative", overflow: "hidden" }}>
 			<CookieConsent />
 			<NavigationBar />
+			<Section id={SECTION_IDS.hero} minHeight={`calc(100vh - ${NAVBAR_HEIGHT}px)`}>
+				<PathBackground />
 
-			<Section id={SECTION_IDS.hero} minHeight={"max-content"}>
-				<div style={{ display: "inline-flex", flexDirection: "column", alignItems: "center", marginLeft:'auto' }}>
+				<div
+					style={{
+						display: "inline-flex",
+						flexDirection: "column",
+						alignItems: "center",
+						marginLeft: "auto",
+						backdropFilter: isMobile ? "blur(10px)" : "none"
+					}}
+				>
 					<Hero />
 					<About />
-					<PathBackground />
 				</div>
 			</Section>
 
 			<Section id={SECTION_IDS.skills}>
-				<Skills />
+				<div>
+					<Skills />
+					<Certifications />
+				</div>
 			</Section>
 			<Section id={SECTION_IDS.projects}>
 				<Projects />

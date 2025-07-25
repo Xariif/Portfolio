@@ -59,6 +59,8 @@ const Hero: React.FC<HeroProps> = memo(({ onViewWork, onAboutMe }) => {
 				alignItems: "center",
 				position: "relative",
 				textAlign: "center",
+				pt: 8,
+				pb: 8,
 				px: 2,
 				zIndex: 6
 			}}

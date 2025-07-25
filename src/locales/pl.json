@@ -1,105 +1,110 @@
 {
-  "navigation": {
-    "home": "Start",
-    "about": "O mnie",
-    "skills": "Umiejętności",
-    "projects": "Projekty",
-    "contact": "Kontakt"
-  },
-  "hero": {
-    "title": "Cześć, jestem Jakub Filiks",
-    "subtitle": "Full Stack Developer",
-    "description": "Pasjonat programowania tworzący nowoczesne aplikacje internetowe z wykorzystaniem najnowszych technologii.",
-    "downloadCV": "Pobierz CV",
-    "contactMe": "Skontaktuj się",
-    "aboutMe": "O mnie",
-    "viewWork": "Zobacz prace",
-    "github": "GitHub"
-  },
-  "about": {
-    "title": "O mnie",
-    "description": "Jestem fullstack developerem z Warszawy, pasjonatem czystego kodu i praktycznego programowania. Specjalizuję się w React, .NET i MongoDB. Obecnie pracuję nad systemem zarządzania centrami handlowymi i buduję projekty osobiste, takie jak platforma analityki rotacji najemców. W wolnym czasie eksploruję usługi chmurowe (Oracle), DevOps i automatyzację systemów.",
-    "experience": "Doświadczenie",
-    "projects": "Ukończone projekty",
-    "clients": "Zadowoleni klienci",
-    "location": "Warszawa, Polska"
-  },
-  "skills": {
-    "title": "Umiejętności i technologie",
-    "frontend": "Frontend Development",
-    "backend": "Backend Development",
-    "tools": "DevOps i chmura",
-    "databases": "Bazy danych i storage"
-  },
-  "projects": {
-    "title": "Moje projekty",
-    "viewProject": "Zobacz projekt",
-    "sourceCode": "Kod źródłowy",
-    "liveDemo": "Demo na żywo",
-    "experience": "Doświadczenie",
-    "experiences": [
-      {
-        "title": "Fullstack C# + React Developer",
-        "company": "Trackeo",
-        "location": "Warszawa",
-        "date": "10.2024 - obecnie (8 miesięcy)",
-        "description": "Tworzenie systemu do obsługi centrów handlowych z wykorzystaniem MongoDB, MUI i nowoczesnego stosu frontend/backend. Utrzymanie i implementacja nowych funkcji, zapewnienie jakości kodu i integracji danych.",
-        "skills": ["React", "C#", "MongoDB", "MUI"]
-      },
-      {
-        "title": "Support",
-        "company": "Trackeo",
-        "location": "Warszawa",
-        "date": "01.2022 - obecnie (3 lata 5 miesięcy)",
-        "description": "Obsługa klienta poprzez email, rozwiązywanie problemów związanych z systemem produkcyjnym, bliska komunikacja z zespołem. Narzędzia: Office Suite, Azure DevOps, Teams, Slack, FreshDesk.",
-        "skills": ["Azure DevOps", "FreshDesk", "Teams", "Slack"]
-      },
-      {
-        "title": "Programista - Stażysta",
-        "company": "Simeo IO",
-        "location": "Warszawa",
-        "date": "01.2024 - 10.2024 (10 miesięcy)",
-        "description": "Fullstack developer Angular + C# .NET i MSSQL. Odpowiedzialny za tworzenie wewnętrznych narzędzi dla potrzeb klientów/zespołu.",
-        "skills": ["Angular", "C#", ".NET", "MSSQL"]
-      },
-      {
-        "title": "Praktyka zawodowa",
-        "company": "JMP Flowers",
-        "location": "Stężyca",
-        "date": "10.2019 – 10.2019 (1 miesiąc)",
-        "description": "Staż pod nadzorem programisty, tworzenie pierwszych aplikacji desktopowych w Windows Forms (C#). Nauka podstaw programowania, interfejsów i logiki aplikacji.",
-        "skills": ["C#", "Windows Forms"]
-      }
-    ]
-  },
-  "contact": {
-    "title": "Skontaktuj się",
-    "subtitle": "Współpracujmy razem",
-    "description": "Zawsze jestem zainteresowany nowymi możliwościami i ekscytującymi projektami.",
-    "name": "Imię",
-    "email": "Email",
-    "message": "Wiadomość",
-    "send": "Wyślij wiadomość",
-    "phone": "Telefon",
-    "location": "Lokalizacja"
-  },
-  "common": {
-    "loading": "Ładowanie...",
-    "error": "Błąd",
-    "success": "Sukces",
-    "close": "Zamknij",
-    "back": "Wstecz",
-    "next": "Dalej",
-    "previous": "Poprzedni"
-  },
-  "language": {
-    "english": "Angielski",
-    "polish": "Polski"
-  },
-  "cookies": {
-    "title": "Polityka Cookies",
-    "description": "Ta strona używa plików cookies, aby zapewnić najlepsze doświadczenie użytkownika. Cookies pomagają nam analizować ruch na stronie, dostosowywać treści i zapewniać funkcje mediów społecznościowych.",
-    "consent": "Klikając 'Akceptuję', wyrażasz zgodę na używanie przez nas cookies zgodnie z naszą polityką prywatności.",
-    "accept": "Akceptuję"
-  }
+	"navigation": {
+		"home": "Start",
+		"about": "O mnie",
+		"skills": "Umiejętności",
+		"projects": "Projekty",
+		"contact": "Kontakt"
+	},
+	"hero": {
+		"title": "Cześć, jestem Jakub Filiks",
+		"subtitle": "Full Stack Developer",
+		"description": "Pasjonat programowania tworzący nowoczesne aplikacje internetowe z wykorzystaniem najnowszych technologii.",
+		"downloadCV": "Pobierz CV",
+		"contactMe": "Skontaktuj się",
+		"aboutMe": "O mnie",
+		"viewWork": "Zobacz prace",
+		"github": "GitHub"
+	},
+	"about": {
+		"title": "O mnie",
+		"description": "Jestem fullstack developerem z Warszawy, pasjonatem czystego kodu i praktycznego programowania. Specjalizuję się w React, .NET i MongoDB. Obecnie pracuję nad systemem zarządzania centrami handlowymi i buduję projekty osobiste, takie jak platforma analityki rotacji najemców. W wolnym czasie eksploruję usługi chmurowe (Oracle), DevOps i automatyzację systemów.",
+		"experience": "Doświadczenie",
+		"projects": "Ukończone projekty",
+		"clients": "Zadowoleni klienci",
+		"location": "Warszawa, Polska"
+	},
+	"skills": {
+		"title": "Umiejętności i technologie",
+		"frontend": "Frontend Development",
+		"backend": "Backend Development",
+		"tools": "DevOps i chmura",
+		"databases": "Bazy danych i storage"
+	},
+	"projects": {
+		"title": "Moje projekty",
+		"viewProject": "Zobacz projekt",
+		"sourceCode": "Kod źródłowy",
+		"liveDemo": "Demo na żywo",
+		"experience": "Doświadczenie",
+		"experiences": [
+			{
+				"title": "Fullstack C# + React Developer",
+				"company": "Trackeo",
+				"location": "Warszawa",
+				"date": "10.2024 - obecnie (8 miesięcy)",
+				"description": "Tworzenie systemu do obsługi centrów handlowych z wykorzystaniem MongoDB, MUI i nowoczesnego stosu frontend/backend. Utrzymanie i implementacja nowych funkcji, zapewnienie jakości kodu i integracji danych.",
+				"skills": ["React", "C#", "MongoDB", "MUI"]
+			},
+			{
+				"title": "Support",
+				"company": "Trackeo",
+				"location": "Warszawa",
+				"date": "01.2022 - obecnie (3 lata 5 miesięcy)",
+				"description": "Obsługa klienta poprzez email, rozwiązywanie problemów związanych z systemem produkcyjnym, bliska komunikacja z zespołem. Narzędzia: Office Suite, Azure DevOps, Teams, Slack, FreshDesk.",
+				"skills": ["Azure DevOps", "FreshDesk", "Teams", "Slack"]
+			},
+			{
+				"title": "Programista - Stażysta",
+				"company": "Simeo IO",
+				"location": "Warszawa",
+				"date": "01.2024 - 10.2024 (10 miesięcy)",
+				"description": "Fullstack developer Angular + C# .NET i MSSQL. Odpowiedzialny za tworzenie wewnętrznych narzędzi dla potrzeb klientów/zespołu.",
+				"skills": ["Angular", "C#", ".NET", "MSSQL"]
+			},
+			{
+				"title": "Praktyka zawodowa",
+				"company": "JMP Flowers",
+				"location": "Stężyca",
+				"date": "10.2019 – 10.2019 (1 miesiąc)",
+				"description": "Staż pod nadzorem programisty, tworzenie pierwszych aplikacji desktopowych w Windows Forms (C#). Nauka podstaw programowania, interfejsów i logiki aplikacji.",
+				"skills": ["C#", "Windows Forms"]
+			}
+		]
+	},
+	"contact": {
+		"title": "Skontaktuj się",
+		"subtitle": "Współpracujmy razem",
+		"description": "Zawsze jestem zainteresowany nowymi możliwościami i ekscytującymi projektami.",
+		"name": "Imię",
+		"email": "Email",
+		"message": "Wiadomość",
+		"send": "Wyślij wiadomość",
+		"phone": "Telefon",
+		"location": "Lokalizacja"
+	},
+	"common": {
+		"loading": "Ładowanie...",
+		"error": "Błąd",
+		"success": "Sukces",
+		"close": "Zamknij",
+		"back": "Wstecz",
+		"next": "Dalej",
+		"previous": "Poprzedni"
+	},
+	"language": {
+		"english": "Angielski",
+		"polish": "Polski"
+	},
+	"cookies": {
+		"title": "Polityka Cookies",
+		"description": "Ta strona używa plików cookies, aby zapewnić najlepsze doświadczenie użytkownika. Cookies pomagają nam analizować ruch na stronie, dostosowywać treści i zapewniać funkcje mediów społecznościowych.",
+		"consent": "Klikając 'Akceptuję', wyrażasz zgodę na używanie przez nas cookies zgodnie z naszą polityką prywatności.",
+		"accept": "Akceptuję"
+	},
+	"certifications": {
+		"title": "Certyfikaty i szkolenia",
+		"fcc_csharp": "Foundational C# with Microsoft",
+		"wwsi_english": "CERTIFICATE IN ENGLISH FOR INFORMATION TECHNOLOGY B2 (CEFR)"
+	}
 }

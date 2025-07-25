@@ -27,7 +27,6 @@ const AnimatedIcon = ({
     scale?: number;
     specialAnimation?: boolean;
 }) => {
-    const theme = useTheme();
     
     return (
         <motion.div
@@ -37,10 +36,8 @@ const AnimatedIcon = ({
             transition={{ duration: 0.5, type: "spring", stiffness: 200 }}
             style={{
                 position: "absolute",
-                top: point.y - 18,
-                left: point.x - 18,
-                zIndex: 2,
-                backgroundColor: theme.palette.background.default,
+                top: point.y - 43,
+                left: point.x - 22,
                 borderRadius: "50%",
                 padding: 8,
                 cursor: "pointer",
@@ -65,7 +62,7 @@ const PathBackground = () => {
 	}, [startPoints]);
 
 	return (
-		<div style={{opacity:.4, position: "absolute", top: 0, left: 0, width: "100%", height: "100%", pointerEvents: "none"}}>
+		<div style={{ position: "relative", top: -500, left: 100, pointerEvents: "none"}}>
 			<svg width={600} height={1000} style={{ position: "absolute", top: 0, left: 0 }}>
 				<defs>
 					<filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
@@ -93,22 +90,22 @@ const PathBackground = () => {
 				})}
 			</svg>
 			{points[0] && (
-				<AnimatedIcon point={points[0]}>
+				<AnimatedIcon point={{ x: points[0].x -22, y: points[0].y + 43 }}  scale={2} >
 					<ComputerIcon />
 				</AnimatedIcon>
 			)}
 			{points[1] && (
-				<AnimatedIcon point={points[1]}>
+				<AnimatedIcon point={points[1]} scale={2} >
 					<LandscapeRounded />
 				</AnimatedIcon>
 			)}
 			{points[3] && (
-				<AnimatedIcon point={points[3]}>
+				<AnimatedIcon point={points[3]} scale={2} >
 					<SchoolRounded />
 				</AnimatedIcon>
 			)}
 			{points[5] && (
-				<AnimatedIcon point={points[5]} scale={1.8} specialAnimation={true}>
+				<AnimatedIcon point={{ x: points[5].x + 22, y: points[5].y - 15 }} scale={3} specialAnimation={true}>
 					<FlagRounded sx={{ color: "#FFD700" }} />
 				</AnimatedIcon>
 			)}

@@ -1,105 +1,111 @@
 {
-  "navigation": {
-    "home": "Home",
-    "about": "About",
-    "skills": "Skills",
-    "projects": "Projects",
-    "contact": "Contact"
-  },
-  "hero": {
-    "title": "Hi, I'm Jakub Filiks",
-    "subtitle": "Full Stack Developer",
-    "description": "Passionate developer creating modern web applications with cutting-edge technologies.",
-    "downloadCV": "Download CV",
-    "contactMe": "Contact Me",
-    "aboutMe": "About Me",
-    "viewWork": "View Work",
-    "github": "GitHub"
-  },
-  "about": {
-    "title": "About Me",
-    "description": "I'm a fullstack developer from Warsaw, passionate about clean code and practical development. I specialize in React, .NET and MongoDB. I currently work on a shopping center management system and build personal projects like a tenant turnover analytics platform. In my spare time, I explore cloud services (Oracle), DevOps, and system automation.",
-    "experience": "Experience",
-    "projects": "Projects Completed",
-    "clients": "Happy Clients",
-    "location": "Warsaw, Poland"
-  },
-  "skills": {
-    "title": "Skills & Technologies",
-    "frontend": "Frontend Development",
-    "backend": "Backend Development", 
-    "tools": "DevOps & Cloud",
-    "databases": "Database & Storage"
-  },
-  "projects": {
-    "title": "My Projects",
-    "viewProject": "View Project",
-    "sourceCode": "Source Code",
-    "liveDemo": "Live Demo",
-    "experience": "Experience",
-    "experiences": [
-      {
-        "title": "Fullstack C# + React Developer",
-        "company": "Trackeo",
-        "location": "Warsaw",
-        "date": "10.2024 - present (8 months)",
-        "description": "Developing a system for handling shopping centers using MongoDB, MUI, and a modern frontend/backend stack. Maintaining and implementing new features, ensuring code quality and data integration.",
-        "skills": ["React", "C#", "MongoDB", "MUI"]
-      },
-      {
-        "title": "Support",
-        "company": "Trackeo",
-        "location": "Warsaw",
-        "date": "01.2022 - present (3 years 5 months)",
-        "description": "Email customer service, solving problems related to the production system, close communication with the team. Tools: Office Suite, Azure DevOps, Teams, Slack, FreshDesk.",
-        "skills": ["Azure DevOps", "FreshDesk", "Teams", "Slack"]
-      },
-      {
-        "title": "Programmer - Intern",
-        "company": "Simeo IO",
-        "location": "Warsaw",
-        "date": "01.2024 - 10.2024 (10 months)",
-        "description": "Fullstack Angular + C# .NET, and MSSQL developer. Responsible for creating internal tools for client/team needs.",
-        "skills": ["Angular", "C#", ".NET", "MSSQL"]
-      },
-      {
-        "title": "Professional Practice",
-        "company": "JMP Flowers",
-        "location": "Stezyca",
-        "date": "10.2019 – 10.2019 (1 month)",
-        "description": "Internship under the supervision of a programmer, creating first desktop applications in Windows Forms (C#). Learned basics of programming, interfaces, and application logic.",
-        "skills": ["C#", "Windows Forms"]
-      }
-    ]
-  },
-  "contact": {
-    "title": "Get In Touch",
-    "subtitle": "Let's work together",
-    "description": "I'm always interested in new opportunities and exciting projects.",
-    "name": "Name",
-    "email": "Email",
-    "message": "Message",
-    "send": "Send Message",
-    "phone": "Phone",
-    "location": "Location"
-  },
-  "common": {
-    "loading": "Loading...",
-    "error": "Error",
-    "success": "Success",
-    "close": "Close",
-    "back": "Back",
-    "next": "Next",
-    "previous": "Previous"
-  },
-  "language": {
-    "english": "English",
-    "polish": "Polish"
-  },
-  "cookies": {
-    "title": "Cookie Policy",
-    "description": "This website uses cookies to provide the best user experience. Cookies help us analyze website traffic, customize content, and provide social media features.",
-    "consent": "By clicking 'Accept', you consent to our use of cookies in accordance with our privacy policy.",
-    "accept": "Accept"
-  }
+	"navigation": {
+		"home": "Home",
+		"about": "About",
+		"skills": "Skills",
+		"projects": "Projects",
+		"contact": "Contact"
+	},
+	"hero": {
+		"title": "Hi, I'm Jakub Filiks",
+		"subtitle": "Full Stack Developer",
+		"description": "Passionate developer creating modern web applications with cutting-edge technologies.",
+		"downloadCV": "Download CV",
+		"contactMe": "Contact Me",
+		"aboutMe": "About Me",
+		"viewWork": "View Work",
+		"github": "GitHub"
+	},
+	"about": {
+		"title": "About Me",
+		"description": "I'm a fullstack developer from Warsaw, passionate about clean code and practical development. I specialize in React, .NET and MongoDB. I currently work on a shopping center management system and build personal projects like a tenant turnover analytics platform. In my spare time, I explore cloud services (Oracle), DevOps, and system automation.",
+		"experience": "Experience",
+		"projects": "Projects Completed",
+		"clients": "Happy Clients",
+		"location": "Warsaw, Poland"
+	},
+	"skills": {
+		"title": "Skills & Technologies",
+		"frontend": "Frontend Development",
+		"backend": "Backend Development",
+		"tools": "DevOps & Cloud",
+		"databases": "Database & Storage"
+	},
+	"projects": {
+		"title": "My Projects",
+		"viewProject": "View Project",
+		"sourceCode": "Source Code",
+		"liveDemo": "Live Demo",
+		"experience": "Experience",
+		"experiences": [
+			{
+				"title": "Fullstack C# + React Developer",
+				"company": "Trackeo",
+				"location": "Warsaw",
+				"date": "10.2024 - present (8 months)",
+				"description": "Developing a system for handling shopping centers using MongoDB, MUI, and a modern frontend/backend stack. Maintaining and implementing new features, ensuring code quality and data integration.",
+				"skills": ["React", "C#", "MongoDB", "MUI"]
+			},
+			{
+				"title": "Support",
+				"company": "Trackeo",
+				"location": "Warsaw",
+				"date": "01.2022 - present (3 years 5 months)",
+				"description": "Email customer service, solving problems related to the production system, close communication with the team. Tools: Office Suite, Azure DevOps, Teams, Slack, FreshDesk.",
+				"skills": ["Azure DevOps", "FreshDesk", "Teams", "Slack"]
+			},
+			{
+				"title": "Programmer - Intern",
+				"company": "Simeo IO",
+				"location": "Warsaw",
+				"date": "01.2024 - 10.2024 (10 months)",
+				"description": "Fullstack Angular + C# .NET, and MSSQL developer. Responsible for creating internal tools for client/team needs.",
+				"skills": ["Angular", "C#", ".NET", "MSSQL"]
+			},
+			{
+				"title": "Professional Practice",
+				"company": "JMP Flowers",
+				"location": "Stezyca",
+				"date": "10.2019 – 10.2019 (1 month)",
+				"description": "Internship under the supervision of a programmer, creating first desktop applications in Windows Forms (C#). Learned basics of programming, interfaces, and application logic.",
+				"skills": ["C#", "Windows Forms"]
+			}
+		]
+	},
+	"contact": {
+		"title": "Get In Touch",
+		"subtitle": "Let's work together",
+		"description": "I'm always interested in new opportunities and exciting projects.",
+		"name": "Name",
+		"email": "Email",
+		"message": "Message",
+		"send": "Send Message",
+		"phone": "Phone",
+		"location": "Location"
+	},
+	"common": {
+		"loading": "Loading...",
+		"error": "Error",
+		"success": "Success",
+		"close": "Close",
+		"back": "Back",
+		"next": "Next",
+		"previous": "Previous"
+	},
+	"language": {
+		"english": "English",
+		"polish": "Polish"
+	},
+	"cookies": {
+		"title": "Cookie Policy",
+		"description": "This website uses cookies to provide the best user experience. Cookies help us analyze website traffic, customize content, and provide social media features.",
+		"consent": "By clicking 'Accept', you consent to our use of cookies in accordance with our privacy policy.",
+		"accept": "Accept"
+	},
+	"certifications": {
+		"title": "Certifications & Courses",
+		"fcc_csharp": "Foundational C# with Microsoft",
+    "wwsi_english": "CERTIFICATE IN ENGLISH FOR INFORMATION TECHNOLOGY B2 (CEFR)"
+
+	}
 }
