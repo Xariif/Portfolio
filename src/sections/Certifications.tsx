@@ -81,7 +81,7 @@ const Certifications = memo(() => (
 							) : (
 								c.label
 							)}
-							{c.details ? ` – ${c.details}` : ""}
+							{/* {c.details ? ` – ${c.details}` : ""} */}
 							{c.issuer ? ` – ${c.issuer}` : ""}
 							{c.year ? ` (${c.year})` : ""}
 						</span>
