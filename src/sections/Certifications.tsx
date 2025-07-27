@@ -1,4 +1,4 @@
-import { Box, Typography, Chip, Stack, Link } from "@mui/material";
+import { Box, Typography, Chip, Stack, Link, useTheme, useMediaQuery } from "@mui/material";
 import { t } from "i18next";
 import { memo } from "react";
 
@@ -50,48 +50,54 @@ const certifications = [
 		issuer: "ZETO Lublin Sp. z o.o."
 	}
 ];
+const Certifications = memo(() => {
+	const theme = useTheme();
+	const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
-const Certifications = memo(() => (
-	<Box sx={{ py: 8 }}>
-		<Typography variant="h2" align="center" gutterBottom>
-			{t("certifications.title")}
-		</Typography>
-		<Stack spacing={2}>
-			{certifications.map((c, idx) => (
-				<Chip
-					key={idx}
-					label={
-						<span>
-							{c.url ? (
-								<Link
-									href={c.url}
-									target="_blank"
-									rel="noopener"
-									underline="hover"
-									sx={{
-										color: "#1976d2",
-										fontWeight: 600,
-										"&:hover": {
-											color: "#1565c0"
-										}
-									}}
-								>
-									{c.label}
-								</Link>
-							) : (
-								c.label
-							)}
-							{/* {c.details ? ` – ${c.details}` : ""} */}
-							{c.issuer ? ` – ${c.issuer}` : ""}
-							{c.year ? ` (${c.year})` : ""}
-						</span>
-					}
-					variant="filled"
-					sx={{ fontSize: "1rem", py: 2, color: "text.primary" }}
-				/>
-			))}
-		</Stack>
-	</Box>
-));
+	return (
+		<Box sx={{ py: 8, px: 2 }} gap={2} display="flex" flexDirection="column" alignItems="center">
+			<Typography variant="h2" align="center" gutterBottom>
+				{t("certifications.title")}
+			</Typography>
+
+	
+				{certifications.map((c, idx) => (
+					<Box
+						key={idx}
+						sx={{
+							border: "1px solid",
+							borderColor: "primary.light",
+							borderRadius: "1rem",
+							px: 2,
+							py: 1,
+							boxShadow: 1,
+							fontSize: "1rem",
+							minWidth: isMobile ? "100%" : 250,
+							color: "text.primary",
+							"& a": {
+								color: "primary.main",
+								fontWeight: 600,
+								textDecoration: "none",
+								"&:hover": {
+									color: "primary.dark",
+									textDecoration: "underline"
+								}
+							}
+						}}
+					>
+						{c.url ? (
+							<Link href={c.url} target="_blank" rel="noopener">
+								{c.label}
+							</Link>
+						) : (
+							<span>{c.label}</span>
+						)}
+						{c.issuer ? ` – ${c.issuer}` : ""}
+						{c.year ? ` (${c.year})` : ""}
+					</Box>
+				))}
+		</Box>
+	);
+});
 
 export default Certifications;

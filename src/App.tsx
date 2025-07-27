@@ -1,7 +1,8 @@
-import { Box, Container, useMediaQuery, useTheme } from "@mui/material";
-import { lazy } from "react";
+import { Box, CircularProgress, Container, CssBaseline, ThemeProvider, useMediaQuery, useTheme } from "@mui/material";
+import { lazy, Suspense } from "react";
 import PathBackground from "./components/PathBackground";
 import Certifications from "./sections/Certifications";
+import theme from "./theme/theme";
 const NavigationBar = lazy(() => import("./components/NavigationBar"));
 
 const Hero = lazy(() => import("./sections/Hero"));
@@ -21,10 +22,8 @@ const SECTION_IDS = {
 };
 
 function App() {
-	// Adjust this value to match your NavigationBar height
 	const NAVBAR_HEIGHT = 56;
 
-	const theme = useTheme();
 	const isMobile = useMediaQuery(theme.breakpoints.down("md"));
 
 	type SectionProps = {
@@ -50,39 +49,50 @@ function App() {
 	);
 
 	return (
-		<Container disableGutters sx={{ position: "relative", overflow: "hidden" }}>
-			<CookieConsent />
-			<NavigationBar />
-			<Section id={SECTION_IDS.hero} minHeight={`calc(100vh - ${NAVBAR_HEIGHT}px)`}>
-				<PathBackground />
+		<ThemeProvider theme={theme} defaultMode="light">
+			<CssBaseline />
+			<Suspense
+				fallback={
+					<Box sx={{ display: "flex", justifyContent: "center", alignItems: "center", minHeight: "100vh" }}>
+						<CircularProgress />
+					</Box>
+				}
+			>
+				<Container disableGutters sx={{ position: "relative", overflow: "hidden" }}>
+					<CookieConsent />
+					<NavigationBar />
+					<Section id={SECTION_IDS.hero} minHeight={`calc(100vh - ${NAVBAR_HEIGHT}px)`}>
+						<PathBackground />
 
-				<div
-					style={{
-						display: "inline-flex",
-						flexDirection: "column",
-						alignItems: "center",
-						marginLeft: "auto",
-						backdropFilter: isMobile ? "blur(10px)" : "none"
-					}}
-				>
-					<Hero />
-					<About />
-				</div>
-			</Section>
+						<div
+							style={{
+								display: "inline-flex",
+								flexDirection: "column",
+								alignItems: "center",
+								marginLeft: "auto",
+								backdropFilter: isMobile ? "blur(10px)" : "none"
+							}}
+						>
+							<Hero />
+							<About />
+						</div>
+					</Section>
 
-			<Section id={SECTION_IDS.skills}>
-				<div>
-					<Skills />
-					<Certifications />
-				</div>
-			</Section>
-			<Section id={SECTION_IDS.projects}>
-				<Projects />
-			</Section>
-			<Section id={SECTION_IDS.contact}>
-				<Contact />
-			</Section>
-		</Container>
+					<Section id={SECTION_IDS.skills}>
+						<div>
+							<Skills />
+							<Certifications />
+						</div>
+					</Section>
+					<Section id={SECTION_IDS.projects}>
+						<Projects />
+					</Section>
+					<Section id={SECTION_IDS.contact}>
+						<Contact />
+					</Section>
+				</Container>
+			</Suspense>
+		</ThemeProvider>
 	);
 }
 
