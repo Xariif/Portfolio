@@ -65,7 +65,7 @@ const Hero: React.FC<HeroProps> = memo(({ onViewWork, onAboutMe }) => {
 				zIndex: 6
 			}}
 		>
-			<img alt="Jakub Filiks" src="/profile_photo.jpeg" style={{ width: 200, height: 200 }} />
+			<img alt="Jakub Filiks" src="/Portfolio/profile_photo.jpeg" style={{ width: 200, height: 200 }} />
 			<Typography
 				variant="h1"
 				sx={{
