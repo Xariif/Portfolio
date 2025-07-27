@@ -5,14 +5,13 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
-    "build:analyze": "tsc -b && vite build --mode analyze",
+    "build": "vite build",
+    "build:analyze": "vite build --mode analyze",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "preview": "vite preview",
-    "type-check": "tsc --noEmit",
-    "deploy": "gh-pages -d dist"
-  },
+    "type-check": "tsc --noEmit"
+    },
   "dependencies": {
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.1",

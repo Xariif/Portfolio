@@ -9,6 +9,7 @@ export default defineConfig({
     minify: 'esbuild',
     cssMinify: true,
     rollupOptions: {
+      maxParallelFileOps: 16, // Increase parallel file operations
       output: {
         // Manual chunk splitting for better caching
         manualChunks: {
