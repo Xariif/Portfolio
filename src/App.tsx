@@ -39,9 +39,7 @@ function App() {
 				minHeight: minHeight || "100vh",
 				display: "flex",
 				alignItems: "center",
-				justifyContent: "center",
-				scrollMarginTop: `${NAVBAR_HEIGHT + 16}px`,
-				py: 8
+				justifyContent: "center"
 			}}
 		>
 			{children}
@@ -63,7 +61,6 @@ function App() {
 					<NavigationBar />
 					<Section id={SECTION_IDS.hero} minHeight={`calc(100vh - ${NAVBAR_HEIGHT}px)`}>
 						<PathBackground />
-
 						<div
 							style={{
 								display: "inline-flex",
@@ -79,10 +76,10 @@ function App() {
 					</Section>
 
 					<Section id={SECTION_IDS.skills}>
-						<div>
+						<Box>
 							<Skills />
 							<Certifications />
-						</div>
+						</Box>
 					</Section>
 					<Section id={SECTION_IDS.projects}>
 						<Projects />

@@ -93,10 +93,17 @@ const Hero: React.FC<HeroProps> = memo(({ onViewWork, onAboutMe }) => {
 					mb: 2
 				}}
 			>
-				<Button variant="outlined" size="large" onClick={handleAboutMe} endIcon={<i className="hn hn-info-circle"></i>}>
+				<Button disabled variant="outlined" size="large" onClick={handleAboutMe} endIcon={<i className="hn hn-info-circle"></i>}>
 					{t("hero.aboutMe")}
 				</Button>
-				<Button variant="outlined" size="large" onClick={handleViewWork} color="success" endIcon={<i className="hn hn-eye"></i>}>
+				<Button
+					disabled
+					variant="outlined"
+					size="large"
+					onClick={handleViewWork}
+					// color="success"
+					endIcon={<i className="hn hn-eye"></i>}
+				>
 					{t("hero.viewWork")}
 				</Button>
 				<Button variant="outlined" size="large" color="secondary" href="https://github.com/Xariif" target="_blank" rel="noopener noreferrer" endIcon={<i className="hn hn-github"></i>}>

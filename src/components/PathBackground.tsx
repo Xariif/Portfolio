@@ -81,6 +81,8 @@ const PathBackground = () => {
 							d={segmentD}
 							stroke={green[400]}
 							strokeWidth={3}
+							strokeLinecap="round"
+							strokeLinejoin="round"
 							fill="none"
 							filter="url(#glow)"
 							initial={{ pathLength: 0 }}

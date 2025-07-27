@@ -56,8 +56,10 @@ const Certifications = memo(() => {
 
 	return (
 		<Box sx={{ py: 8, px: 2 }} gap={2} display="flex" flexDirection="column" alignItems="center">
-			<Typography variant="h2" align="center" gutterBottom>
+			<Typography variant="h1" gutterBottom align="center" display='flex' justifyContent='center' alignItems='center'>
 				{t("certifications.title")}
+									<i className="hn hn-trophy-solid"style={{ fontSize: 48, marginLeft: 8 }}></i>
+
 			</Typography>
 
 	

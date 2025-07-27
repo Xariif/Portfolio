@@ -29,31 +29,31 @@ const ContactItemComponent = memo(({ item, activeItem, onItemClick }: { item: Co
 	);
 
 	return (
-    <Grid size={{xs:12,md:6}}>
-      <Tooltip title={item.hoverText} placement="top" arrow>
-			<Link href={item.link} target={!isCopyable ? "_blank" : undefined} rel="noopener noreferrer" underline="none" onClick={handleClick} sx={{ display: "block", minWidth: 200 }}>
-				<Paper sx={{ p: 2, textAlign: "center", height: "100%" }}>
-					<i
-						className={`${item.icon} hn`}
-						style={{
-							fontSize: "2.5rem",
-							marginBottom: "16px",
-							display: "block",
-							color: item.color
-						}}
-					/>
+		<Grid size={{ xs: 12, md: 6 }}>
+			<Tooltip title={item.hoverText} placement="top" arrow>
+				<Link href={item.link} target={!isCopyable ? "_blank" : undefined} rel="noopener noreferrer" underline="none" onClick={handleClick} sx={{ display: "block", minWidth: 200 }}>
+					<Paper sx={{ p: 2, textAlign: "center", height: "100%" }}>
+						<i
+							className={`${item.icon} hn`}
+							style={{
+								fontSize: "2.5rem",
+								marginBottom: "16px",
+								display: "block",
+								color: item.color
+							}}
+						/>
 
-					<Typography variant="caption" color="text.secondary" sx={{ mb: 1, display: "block" }}>
-						{item.label}
-					</Typography>
+						<Typography variant="caption" color="text.secondary" sx={{ mb: 1, display: "block" }}>
+							{item.label}
+						</Typography>
 
-					<Typography variant="body2" color="text.primary">
-						{isActive ? "Copied!" : item.value}
-					</Typography>
-				</Paper>
-			</Link>
-		</Tooltip>
-    </Grid>
+						<Typography variant="body2" color="text.primary">
+							{isActive ? "Copied!" : item.value}
+						</Typography>
+					</Paper>
+				</Link>
+			</Tooltip>
+		</Grid>
 	);
 });
 
@@ -111,18 +111,11 @@ const Contact = memo(() => {
 
 	return (
 		<Box sx={{ px: 3, py: 5 }}>
-			<Typography
-				variant="h3"
-				component="h2"
-				sx={{
-					fontSize: { xs: "1.8rem", sm: "2.2rem" },
-					mb: 5,
-					textAlign: "center"
-				}}
-			>
+			<Typography variant="h1" gutterBottom align="center" display="flex" justifyContent="center" alignItems="center">
 				{t("contact.title")}
+				<i className="hn hn-info-circle" style={{ fontSize: 48, marginLeft: 8 }}></i>
 			</Typography>
-			<Grid container spacing={2}  sx={{ maxWidth: 1000, margin: "0 auto" }}>
+			<Grid container spacing={2} sx={{ maxWidth: 1000, margin: "0 auto" }}>
 				{contactInfo.map((item) => (
 					<ContactItemComponent key={item.id} item={item} activeItem={activeItem} onItemClick={handleItemClick} />
 				))}

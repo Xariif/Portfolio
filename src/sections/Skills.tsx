@@ -77,7 +77,7 @@ const SkillCategory = memo<SkillCategoryProps>(({ skills, title, icon }) => (
 			></i>
 		</Typography>
 
-		<Box >
+		<Box>
 			<Stack direction="row" spacing={1} flexWrap="wrap" useFlexGap sx={{ gap: 1 }}>
 				{skills.map((skill) => (
 					<Chip key={skill} label={skill} size="small" />
@@ -124,8 +124,9 @@ const Skills = memo(() => {
 
 	return (
 		<Container maxWidth="lg" sx={{ py: 8 }}>
-			<Typography variant="h1" gutterBottom align="center">
+			<Typography variant="h1" gutterBottom align="center" display="flex" justifyContent="center" alignItems="center">
 				{t("skills.title")}
+				<i className="hn hn-life-hacking" style={{ fontSize: 48, marginLeft: 8 }}></i>
 			</Typography>
 			<Box
 				sx={{
