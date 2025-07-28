@@ -1,4 +1,4 @@
-import { Box, Button, Stack, Typography, useTheme, useMediaQuery, Menu, MenuItem, Divider } from "@mui/material";
+import { Box, Button, Stack, Typography, useTheme, useMediaQuery, Menu, MenuItem, Divider, ButtonGroup } from "@mui/material";
 import React, { memo, useCallback, useState } from "react";
 import { useTranslation } from "react-i18next";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
@@ -13,6 +13,7 @@ const Hero: React.FC<HeroProps> = memo(({ onViewWork, onAboutMe }) => {
 	const theme = useTheme();
 	const isMobile = useMediaQuery(theme.breakpoints.down("md"));
 	const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
+	const [selectedLanguage, setSelectedLanguage] = useState<"en" | "pl">(i18n.language as "en" | "pl");
 	const open = Boolean(anchorEl);
 
 	const handleViewWork = useCallback(() => {
@@ -31,24 +32,20 @@ const Hero: React.FC<HeroProps> = memo(({ onViewWork, onAboutMe }) => {
 		setAnchorEl(null);
 	}, []);
 
-	const handleDownloadCV = useCallback(
-		(language?: "en" | "pl") => {
-			const currentLanguage = language || i18n.language;
-			const fileName = currentLanguage === "pl" ? "/CV_Jakub_Filiks_PL.docx" : "/CV_Jakub_Filiks_EN.docx";
-			const link = document.createElement("a");
-			link.href = fileName;
-			link.download = fileName;
-			document.body.appendChild(link);
-			link.click();
-			document.body.removeChild(link);
-			handleCVClose();
-		},
-		[handleCVClose, i18n.language]
-	);
+	const handleLanguageSelect = useCallback((language: "en" | "pl") => {
+		setSelectedLanguage(language);
+		handleCVClose();
+	}, [handleCVClose]);
 
 	const handleDirectDownload = useCallback(() => {
-		handleDownloadCV();
-	}, [handleDownloadCV]);
+		const fileName = selectedLanguage === "pl" ? "/CV_Jakub_Filiks_PL.docx" : "/CV_Jakub_Filiks_EN.docx";
+		const link = document.createElement("a");
+		link.href = fileName;
+		link.download = fileName;
+		document.body.appendChild(link);
+		link.click();
+		document.body.removeChild(link);
+	}, [selectedLanguage]);
 
 	return (
 		<Box
@@ -109,10 +106,39 @@ const Hero: React.FC<HeroProps> = memo(({ onViewWork, onAboutMe }) => {
 				<Button variant="outlined" size="large" color="secondary" href="https://github.com/Xariif" target="_blank" rel="noopener noreferrer" endIcon={<i className="hn hn-github"></i>}>
 					{t("hero.github")}
 				</Button>
-				<Button variant="outlined" size="medium" color="info" onClick={handleDirectDownload} startIcon={<i className="hn hn-download"></i>}>
-					{t("hero.downloadCV")}
-				</Button>
+				<ButtonGroup variant="outlined" color="info" size="medium" sx={{m:0}}>
+					<Button onClick={handleDirectDownload} size="large" sx={{m:0}} startIcon={<i className="hn hn-download"></i>}>
+						{t("hero.downloadCV")} ({selectedLanguage.toUpperCase()})
+					</Button>
+					<Button
+					size="large"
+						onClick={handleCVClick}
+						sx={{ px: 1, m:0 }}
+					>
+						<ArrowDropDownIcon />
+					</Button>
+				</ButtonGroup>
 			</Stack>
+			
+			<Menu
+				anchorEl={anchorEl}
+				open={open}
+				onClose={handleCVClose}
+			>
+				<MenuItem 
+					onClick={() => handleLanguageSelect('en')}
+					selected={selectedLanguage === 'en'}
+				>
+					🇬🇧 {t("hero.cvLanguages.english")}
+				</MenuItem>
+				<Divider />
+				<MenuItem 
+					onClick={() => handleLanguageSelect('pl')}
+					selected={selectedLanguage === 'pl'}
+				>
+					🇵🇱 {t("hero.cvLanguages.polish")}
+				</MenuItem>
+			</Menu>
 		</Box>
 	);
 });

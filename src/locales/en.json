@@ -14,7 +14,11 @@
 		"contactMe": "Contact Me",
 		"aboutMe": "About Me",
 		"viewWork": "View Work",
-		"github": "GitHub"
+		"github": "GitHub",
+		"cvLanguages": {
+			"english": "English",
+			"polish": "Polish"
+		}
 	},
 	"about": {
 		"title": "About Me",
