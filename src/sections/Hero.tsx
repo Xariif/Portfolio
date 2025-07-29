@@ -94,11 +94,13 @@ const Hero: React.FC<HeroProps> = memo(({ onViewWork, onAboutMe }) => {
 					{t("hero.aboutMe")}
 				</Button>
 				<Button
-					disabled
 					variant="outlined"
 					size="large"
-					onClick={handleViewWork}
-					// color="success"
+					color="success"
+					component="a"
+					href="https://mallmanager.xariif.mooo.com/login"
+					target="_blank"
+					rel="noopener noreferrer"
 					endIcon={<i className="hn hn-eye"></i>}
 				>
 					{t("hero.viewWork")}
