@@ -6,7 +6,6 @@ import theme from "./theme/theme";
 const NavigationBar = lazy(() => import("./components/NavigationBar"));
 
 const Hero = lazy(() => import("./sections/Hero"));
-const About = lazy(() => import("./sections/About"));
 const Projects = lazy(() => import("./sections/Projects"));
 const Skills = lazy(() => import("./sections/Skills"));
 const Contact = lazy(() => import("./sections/Contact"));
@@ -71,7 +70,6 @@ function App() {
 							}}
 						>
 							<Hero />
-							<About />
 						</div>
 					</Section>
 

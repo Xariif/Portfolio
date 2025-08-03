@@ -9,10 +9,7 @@
 	"hero": {
 		"title": "Cześć, jestem Jakub Filiks",
 		"subtitle": "Full Stack Developer",
-		"description": "Pasjonat programowania tworzący nowoczesne aplikacje internetowe z wykorzystaniem najnowszych technologii.",
 		"downloadCV": "Pobierz CV",
-		"contactMe": "Skontaktuj się",
-		"aboutMe": "O mnie",
 		"viewWork": "Zobacz prace",
 		"github": "GitHub",
 		"cvLanguages": {
@@ -22,12 +19,11 @@
 	},
 	"about": {
 		"title": "O mnie",
-		"description": "Jestem fullstack developerem z Warszawy, pasjonatem czystego kodu i praktycznego programowania. Specjalizuję się w React, .NET i MongoDB. Obecnie pracuję nad systemem zarządzania centrami handlowymi i buduję projekty osobiste, takie jak platforma analityki rotacji najemców. W wolnym czasie eksploruję usługi chmurowe (Oracle), DevOps i automatyzację systemów.",
+		"description": "Jestem fullstack developerem pochodzącym z małej wioski w okolicach Dęblina (mają tam niezłe technikum informatyczne i szkołę lotniczą), uwielbiam pisać czysty kod i uczyć się nowych użytecznych technologii dla mojego stacku. Specjalizuję się w React, .NET i MongoDB. Obecnie pracuję nad systemem zarządzania centrami handlowymi i buduję projekty osobiste, takie jak platforma analityki rotacji najemców (projekt na potrzeby pracy Inżynierskiej). W wolnym czasie eksploruję usługi chmurowe i bawię się Linuxem (chmura Oracle), DevOps i automatyzacją systemów. Przeważnie gdy znajomi potrzebują jakiegoś serwera np. do Minecrafta to ja jestem tym, który im go stawia.",
 		"experience": "Doświadczenie",
 		"projects": "Ukończone projekty",
-		"clients": "Zadowoleni klienci",
-		"location": "Warszawa, Polska"
-	},
+		"clients": "Zadowoleni klienci"
+		},
 	"skills": {
 		"title": "Umiejętności i technologie",
 		"frontend": "Frontend Development",
@@ -77,7 +73,7 @@
 		]
 	},
 	"contact": {
-		"title": "Skontaktuj się",
+		"title": "Pogadajmy",
 		"subtitle": "Współpracujmy razem",
 		"description": "Zawsze jestem zainteresowany nowymi możliwościami i ekscytującymi projektami.",
 		"name": "Imię",

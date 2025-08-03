@@ -9,10 +9,7 @@
 	"hero": {
 		"title": "Hi, I'm Jakub Filiks",
 		"subtitle": "Full Stack Developer",
-		"description": "Passionate developer creating modern web applications with cutting-edge technologies.",
 		"downloadCV": "Download CV",
-		"contactMe": "Contact Me",
-		"aboutMe": "About Me",
 		"viewWork": "View Work",
 		"github": "GitHub",
 		"cvLanguages": {
@@ -22,11 +19,10 @@
 	},
 	"about": {
 		"title": "About Me",
-		"description": "I'm a fullstack developer from Warsaw, passionate about clean code and practical development. I specialize in React, .NET and MongoDB. I currently work on a shopping center management system and build personal projects like a tenant turnover analytics platform. In my spare time, I explore cloud services (Oracle), DevOps, and system automation.",
+		"description": "I'm a fullstack developer from a small village near Dęblin (They have a pretty good IT technical school and an aviation school there). I love writing clean code and learning new, useful technologies for my stack. I specialize in React, .NET, and MongoDB. Currently, I'm working on a shopping center management system and building personal projects, such as a tenant turnover analytics platform (a project for my engineering thesis). In my free time, I explore cloud services and play around with Linux (Oracle Cloud), DevOps, and system automation. Most of the time, when my friends need a server—for example, for Minecraft—I'm the one who sets it up for them.",
 		"experience": "Experience",
 		"projects": "Projects Completed",
-		"clients": "Happy Clients",
-		"location": "Warsaw, Poland"
+		"clients": "Happy Clients"
 	},
 	"skills": {
 		"title": "Skills & Technologies",
@@ -77,7 +73,7 @@
 		]
 	},
 	"contact": {
-		"title": "Get In Touch",
+		"title": "Let's talk",
 		"subtitle": "Let's work together",
 		"description": "I'm always interested in new opportunities and exciting projects.",
 		"name": "Name",

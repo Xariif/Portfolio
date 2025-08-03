@@ -22,19 +22,19 @@ interface SkillCategoryProps {
 // Categorized skills with enhanced organization
 const skillCategories = {
 	frontend: {
-		skills: ["React.js", "TypeScript", "JavaScript", "Next.js", "CSS3", "HTML5", "MUI", "Responsive Design"],
+		skills: ["React.js", "TypeScript", "JavaScript", "Material UI", "CSS3", "HTML5", "Responsive Design"],
 		icon: "hn-code-solid"
 	},
 	backend: {
-		skills: [".NET Core", "C#", "Node.js", "REST APIs", "GraphQL", "Microservices"],
+		skills: [".NET Core", "C#", "Node.js", "REST APIs", "Microservices", "SignalR"],
 		icon: "hn-robot-solid"
 	},
 	database: {
-		skills: ["SQL Server", "PostgreSQL", "MongoDB", "Redis", "Entity Framework"],
+		skills: ["MSSQL", "PostgreSQL", "MongoDB", "Entity Framework"],
 		icon: "hn-data-science"
 	},
 	devops: {
-		skills: ["Docker", "Kubernetes", "AWS", "CI/CD", "Git", "Azure DevOps"],
+		skills: ["Docker", "CI/CD", "Git", "Azure DevOps", "Oracle Cloud"],
 		icon: "hn-globe-solid"
 	}
 } as const;

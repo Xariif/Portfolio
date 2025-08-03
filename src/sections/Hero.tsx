@@ -32,10 +32,13 @@ const Hero: React.FC<HeroProps> = memo(({ onViewWork, onAboutMe }) => {
 		setAnchorEl(null);
 	}, []);
 
-	const handleLanguageSelect = useCallback((language: "en" | "pl") => {
-		setSelectedLanguage(language);
-		handleCVClose();
-	}, [handleCVClose]);
+	const handleLanguageSelect = useCallback(
+		(language: "en" | "pl") => {
+			setSelectedLanguage(language);
+			handleCVClose();
+		},
+		[handleCVClose]
+	);
 
 	const handleDirectDownload = useCallback(() => {
 		const fileName = selectedLanguage === "pl" ? "/CV_Jakub_Filiks_PL.docx" : "/CV_Jakub_Filiks_EN.docx";
@@ -56,10 +59,12 @@ const Hero: React.FC<HeroProps> = memo(({ onViewWork, onAboutMe }) => {
 				alignItems: "center",
 				position: "relative",
 				textAlign: "center",
+				height: "calc(100vh - 56px)",
 				pt: 8,
 				pb: 8,
 				px: 2,
-				zIndex: 6
+				zIndex: 6,
+				userSelect: "none"
 			}}
 		>
 			<img alt="Jakub Filiks" src="/Portfolio/profile_photo.jpeg" style={{ width: 200, height: 200 }} />
@@ -77,9 +82,6 @@ const Hero: React.FC<HeroProps> = memo(({ onViewWork, onAboutMe }) => {
 			<Typography variant="h5" color="text.secondary" sx={{ mb: 2, fontWeight: 400 }}>
 				{t("hero.subtitle")}
 			</Typography>
-			<Typography color="text.secondary" sx={{ maxWidth: 600, mb: 4, mx: "auto" }}>
-				{t("hero.description")}
-			</Typography>
 			<Stack
 				direction={isMobile ? "column" : "row"}
 				spacing={2}
@@ -90,54 +92,31 @@ const Hero: React.FC<HeroProps> = memo(({ onViewWork, onAboutMe }) => {
 					mb: 2
 				}}
 			>
-				<Button disabled variant="outlined" size="large" onClick={handleAboutMe} endIcon={<i className="hn hn-info-circle"></i>}>
-					{t("hero.aboutMe")}
-				</Button>
-				<Button
-					variant="outlined"
-					size="large"
-					color="success"
-					component="a"
-					href="https://mallmanager.xariif.mooo.com/login"
-					target="_blank"
-					rel="noopener noreferrer"
-					endIcon={<i className="hn hn-eye"></i>}
-				>
+				<Button variant="outlined" size="large" color="success" component="a" href="https://mallmanager.xariif.mooo.com/login" target="_blank" rel="noopener noreferrer" endIcon={<i className="hn hn-eye"></i>}>
 					{t("hero.viewWork")}
 				</Button>
 				<Button variant="outlined" size="large" color="secondary" href="https://github.com/Xariif" target="_blank" rel="noopener noreferrer" endIcon={<i className="hn hn-github"></i>}>
 					{t("hero.github")}
 				</Button>
-				<ButtonGroup variant="outlined" color="info" size="medium" sx={{m:0}}>
-					<Button onClick={handleDirectDownload} size="large" sx={{m:0}} startIcon={<i className="hn hn-download"></i>}>
+				<ButtonGroup variant="outlined" color="info" size="medium" sx={{ m: 0 }}>
+					<Button onClick={handleDirectDownload} size="large" sx={{ m: 0 }} startIcon={<i className="hn hn-download"></i>}>
 						{t("hero.downloadCV")} ({selectedLanguage.toUpperCase()})
 					</Button>
-					<Button
-					size="large"
-						onClick={handleCVClick}
-						sx={{ px: 1, m:0 }}
-					>
+					<Button size="large" onClick={handleCVClick} sx={{ px: 1, m: 0 }}>
 						<ArrowDropDownIcon />
 					</Button>
 				</ButtonGroup>
 			</Stack>
-			
-			<Menu
-				anchorEl={anchorEl}
-				open={open}
-				onClose={handleCVClose}
-			>
-				<MenuItem 
-					onClick={() => handleLanguageSelect('en')}
-					selected={selectedLanguage === 'en'}
-				>
+			<Typography color="text.secondary" sx={{ maxWidth: 800, fontStyle: "italic", textAlign: "center", mb: 2, px: 2 }}>
+				{t("about.description")}
+			</Typography>
+
+			<Menu anchorEl={anchorEl} open={open} onClose={handleCVClose}>
+				<MenuItem onClick={() => handleLanguageSelect("en")} selected={selectedLanguage === "en"}>
 					🇬🇧 {t("hero.cvLanguages.english")}
 				</MenuItem>
 				<Divider />
-				<MenuItem 
-					onClick={() => handleLanguageSelect('pl')}
-					selected={selectedLanguage === 'pl'}
-				>
+				<MenuItem onClick={() => handleLanguageSelect("pl")} selected={selectedLanguage === "pl"}>
 					🇵🇱 {t("hero.cvLanguages.polish")}
 				</MenuItem>
 			</Menu>
