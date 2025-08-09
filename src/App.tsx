@@ -1,4 +1,4 @@
-import { Box, CircularProgress, Container, CssBaseline, ThemeProvider, useMediaQuery, useTheme } from "@mui/material";
+import { Box, CircularProgress, Container, CssBaseline, ThemeProvider, useMediaQuery } from "@mui/material";
 import { lazy, Suspense } from "react";
 import PathBackground from "./components/PathBackground";
 import Certifications from "./sections/Certifications";
@@ -15,6 +15,7 @@ const SECTION_IDS = {
 	hero: "hero",
 	about: "about",
 	skills: "skills",
+	certifications: "certifications",
 	projects: "projects",
 	contact: "contact",
 	backgroundMap: "backgroundMap"
@@ -38,7 +39,8 @@ function App() {
 				minHeight: minHeight || "100vh",
 				display: "flex",
 				alignItems: "center",
-				justifyContent: "center"
+				justifyContent: "center",
+				width: "100%"
 			}}
 		>
 			{children}
@@ -55,37 +57,34 @@ function App() {
 					</Box>
 				}
 			>
-				<Container disableGutters sx={{ position: "relative", overflow: "hidden" }}>
-					<CookieConsent />
-					<NavigationBar />
-					<Section id={SECTION_IDS.hero} minHeight={`calc(100vh - ${NAVBAR_HEIGHT}px)`}>
+				<CookieConsent />
+				<NavigationBar />
+				<Section id={SECTION_IDS.hero} minHeight={`calc(100vh - ${NAVBAR_HEIGHT}px)`}>
+					<Container
+						style={{
+							display: "flex",
+							justifyContent: "space-between",
+							alignItems: "center",
+							marginLeft: "auto",
+							backdropFilter: isMobile ? "blur(10px)" : "none"
+						}}
+					>
 						<PathBackground />
-						<div
-							style={{
-								display: "inline-flex",
-								flexDirection: "column",
-								alignItems: "center",
-								marginLeft: "auto",
-								backdropFilter: isMobile ? "blur(10px)" : "none"
-							}}
-						>
-							<Hero />
-						</div>
-					</Section>
-
-					<Section id={SECTION_IDS.skills}>
-						<Box>
-							<Skills />
-							<Certifications />
-						</Box>
-					</Section>
-					<Section id={SECTION_IDS.projects}>
-						<Projects />
-					</Section>
-					<Section id={SECTION_IDS.contact}>
-						<Contact />
-					</Section>
-				</Container>
+						<Hero />
+					</Container>
+				</Section>
+				<Section id={SECTION_IDS.skills}>
+					<Skills />
+				</Section>
+				<Section id={SECTION_IDS.certifications}>
+					<Certifications />
+				</Section>
+				<Section id={SECTION_IDS.projects}>
+					<Projects />
+				</Section>
+				<Section id={SECTION_IDS.contact}>
+					<Contact />
+				</Section>
 			</Suspense>
 		</ThemeProvider>
 	);

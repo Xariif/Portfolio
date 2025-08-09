@@ -1,6 +1,7 @@
-import { Box, Typography, Stack, Paper, Chip, useMediaQuery, useTheme, Container } from "@mui/material";
+import { Box, Typography, Stack, Paper, Chip, useMediaQuery, useTheme, Container, Zoom } from "@mui/material";
 import { memo, useMemo } from "react";
 import { useTranslation } from "react-i18next";
+import { useInView } from "react-intersection-observer";
 
 // Types for better type safety
 type SkillCategory = keyof typeof skillCategories;
@@ -95,6 +96,10 @@ const Skills = memo(() => {
 	const theme = useTheme();
 	const isMobile = useMediaQuery(theme.breakpoints.down("md"));
 	const isTablet = useMediaQuery(theme.breakpoints.down("lg"));
+	const { ref, inView } = useInView({
+		threshold: 0.2,
+		triggerOnce: true
+	});
 
 	// Category titles with translations
 	const getCategoryTitles = (): Record<SkillCategory, string> => ({
@@ -103,6 +108,7 @@ const Skills = memo(() => {
 		database: t("skills.databases"),
 		devops: t("skills.tools")
 	});
+	
 
 	// Memoized categories data
 	const categories = useMemo<SkillCategoryData[]>(() => {
@@ -128,18 +134,22 @@ const Skills = memo(() => {
 				{t("skills.title")}
 				<i className="hn hn-life-hacking" style={{ fontSize: 48, marginLeft: 8 }}></i>
 			</Typography>
-			<Box
-				sx={{
-					display: "grid",
-					gridTemplateColumns: gridColumns,
-					gap: 3
-				}}
-			>
-				{categories.map(({ key, skills, title, icon }) => (
-					<>
-						<SkillCategory key={key} categoryKey={key} skills={skills} title={title} icon={icon} />
-					</>
-				))}
+			<Box ref={ref}>
+				<Box
+					sx={{
+						display: "grid",
+						gridTemplateColumns: gridColumns,
+						gap: 3
+					}}
+				>
+					{categories.map(({ key, skills, title, icon }) => (
+						<Zoom in={inView} style={{ transitionDelay: inView ? `${200 * categories.findIndex((c) => c.key === key)}ms` : "0ms" }} key={key}>
+							<Box>
+								<SkillCategory categoryKey={key} skills={skills} title={title} icon={icon} />
+							</Box>
+						</Zoom>
+					))}
+				</Box>
 			</Box>
 		</Container>
 	);

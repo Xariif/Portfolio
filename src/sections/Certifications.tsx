@@ -1,6 +1,7 @@
-import { Box, Typography, Chip, Stack, Link, useTheme, useMediaQuery } from "@mui/material";
+import { Box, Typography, Link, useTheme, useMediaQuery, Slide } from "@mui/material";
 import { t } from "i18next";
 import { memo } from "react";
+import { useInView } from "react-intersection-observer";
 
 const certifications = [
 	{
@@ -53,25 +54,29 @@ const certifications = [
 const Certifications = memo(() => {
 	const theme = useTheme();
 	const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+	const { ref, inView } = useInView({
+		threshold: 0.2,
+		triggerOnce: true
+	});
 
 	return (
-		<Box sx={{ py: 8, px: 2 }} gap={2} display="flex" flexDirection="column" alignItems="center">
-			<Typography variant="h1" gutterBottom align="center" display='flex' justifyContent='center' alignItems='center'>
+		<div ref={ref}>
+			<Typography variant="h1" gutterBottom align="center" display="flex" justifyContent="center" alignItems="center">
 				{t("certifications.title")}
-									<i className="hn hn-trophy-solid"style={{ fontSize: 48, marginLeft: 8 }}></i>
-
+				<i className="hn hn-trophy-solid" style={{ fontSize: 48, marginLeft: 8 }}></i>
 			</Typography>
 
-	
-				{certifications.map((c, idx) => (
+			{certifications.map((c, index) => (
+				<Slide in={inView} direction={index % 2 === 0 ? "right" : "left"} key={index} style={{ transitionDelay: inView ? `${250 * index}ms` : "0ms" }}>
 					<Box
-						key={idx}
+						key={index}
 						sx={{
 							border: "1px solid",
 							borderColor: "primary.light",
 							borderRadius: "1rem",
-							px: 2,
-							py: 1,
+							p:1,
+							mt: 2,
+							textAlign:'center',
 							boxShadow: 1,
 							fontSize: "1rem",
 							minWidth: isMobile ? "100%" : 250,
@@ -97,8 +102,9 @@ const Certifications = memo(() => {
 						{c.issuer ? ` – ${c.issuer}` : ""}
 						{c.year ? ` (${c.year})` : ""}
 					</Box>
-				))}
-		</Box>
+				</Slide>
+			))}
+		</div>
 	);
 });
 

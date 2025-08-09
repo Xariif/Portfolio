@@ -1,7 +1,8 @@
-import { Box, Link, Paper, Tooltip, Typography, Grid } from "@mui/material";
+import { Box, Link, Paper, Tooltip, Typography, Grid, Zoom } from "@mui/material";
 import { useState, memo, useCallback } from "react";
 import { useTranslation } from "react-i18next";
 import { useTheme } from "@mui/material";
+import { useInView } from "react-intersection-observer";
 // Type definition for contact items
 interface ContactItem {
 	id: string;
@@ -14,7 +15,7 @@ interface ContactItem {
 }
 
 // Memoized contact item component
-const ContactItemComponent = memo(({ item, activeItem, onItemClick }: { item: ContactItem; activeItem: string | null; onItemClick: (id: string, value: string) => void }) => {
+const ContactItemComponent = ({ index, item, activeItem, onItemClick, inView }: { index: number; item: ContactItem; activeItem: string | null; onItemClick: (id: string, value: string) => void; inView: boolean }) => {
 	const isActive = activeItem === item.id;
 	const isCopyable = item.id === "phone" || item.id === "email";
 
@@ -27,9 +28,10 @@ const ContactItemComponent = memo(({ item, activeItem, onItemClick }: { item: Co
 		},
 		[isCopyable, item.id, item.value, onItemClick]
 	);
-
+	
 	return (
-		<Grid size={{ xs: 12, md: 6 }}>
+		<Zoom  timeout={index * 500} in={inView} style={{ transitionDelay: `${index * 100}ms` }}>
+			<Grid size={{ xs: 12, md: 6 }}>
 			<Tooltip title={item.hoverText} placement="top" arrow>
 				<Link href={item.link} target={!isCopyable ? "_blank" : undefined} rel="noopener noreferrer" underline="none" onClick={handleClick} sx={{ display: "block", minWidth: 200 }}>
 					<Paper sx={{ p: 2, textAlign: "center", height: "100%" }}>
@@ -54,8 +56,9 @@ const ContactItemComponent = memo(({ item, activeItem, onItemClick }: { item: Co
 				</Link>
 			</Tooltip>
 		</Grid>
+		</Zoom>
 	);
-});
+};
 
 ContactItemComponent.displayName = "ContactItemComponent";
 
@@ -109,15 +112,21 @@ const Contact = memo(() => {
 		setTimeout(() => setActiveItem(null), 2000);
 	}, []);
 
+	const { ref, inView } = useInView({
+		threshold: 0.2,
+		triggerOnce: true
+	});
+
+
 	return (
-		<Box sx={{ px: 3, py: 5 }}>
+		<Box sx={{ px: 3, py: 5 }} ref={ref}>
 			<Typography variant="h1" gutterBottom align="center" display="flex" justifyContent="center" alignItems="center">
 				{t("contact.title")}
 				<i className="hn hn-info-circle" style={{ fontSize: 48, marginLeft: 8 }}></i>
 			</Typography>
 			<Grid container spacing={2} sx={{ maxWidth: 1000, margin: "0 auto" }}>
-				{contactInfo.map((item) => (
-					<ContactItemComponent key={item.id} item={item} activeItem={activeItem} onItemClick={handleItemClick} />
+				{contactInfo.map((item,index) => (
+					<ContactItemComponent key={item.id} index={index} item={item} activeItem={activeItem} onItemClick={handleItemClick} inView={inView} />
 				))}
 			</Grid>
 		</Box>

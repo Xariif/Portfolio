@@ -1,8 +1,17 @@
 /* Import pixel icon library CSS early to prevent FOUC */
 @import '@hackernoon/pixel-icon-library/fonts/iconfont.css';
 
+/* Preload the icon font to prevent layout shift */
+@font-face {
+  font-family: 'pixel-icon';
+  src: url('@hackernoon/pixel-icon-library/fonts/iconfont.woff2') format('woff2'),
+       url('@hackernoon/pixel-icon-library/fonts/iconfont.woff') format('woff');
+  font-display: swap;
+}
+
 #root {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 }
