@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import LandscapeRounded from "@mui/icons-material/LandscapeRounded";
 import FlagRounded from "@mui/icons-material/FlagRounded";
 import SchoolRounded from "@mui/icons-material/SchoolRounded";
-import { useTheme } from "@mui/material";
+import { useMediaQuery, useTheme } from "@mui/material";
 import ComputerIcon from "@mui/icons-material/Computer";
 import { green } from "@mui/material/colors";
 
@@ -62,7 +62,7 @@ const PathBackground = () => {
 	}, [startPoints]);
 
 	return (
-		<div style={{ position: "relative", top: -500, left: 100, pointerEvents: "none"}}>
+		<div style={{ position: "relative", top: -500, left: 100, pointerEvents: "none", filter: useMediaQuery(theme.breakpoints.down('lg')) ? "blur(10px)" : undefined }}>
 			<svg width={600} height={1000} style={{ position: "absolute", top: 0, left: 0 }}>
 				<defs>
 					<filter id="glow" x="-50%" y="-50%" width="200%" height="200%">

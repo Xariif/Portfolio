@@ -24,8 +24,6 @@ const SECTION_IDS = {
 function App() {
 	const NAVBAR_HEIGHT = 56;
 
-	const isMobile = useMediaQuery(theme.breakpoints.down("md"));
-
 	type SectionProps = {
 		id: string;
 		children: React.ReactNode;
@@ -64,9 +62,7 @@ function App() {
 						style={{
 							display: "flex",
 							justifyContent: "space-between",
-							alignItems: "center",
-							marginLeft: "auto",
-							backdropFilter: isMobile ? "blur(10px)" : "none"
+							alignItems: "center",						
 						}}
 					>
 						<PathBackground />
