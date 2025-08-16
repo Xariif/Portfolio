@@ -3,7 +3,7 @@ import React, { useCallback, useState } from "react";
 import { useTranslation } from "react-i18next";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 
-
+import './index.css';
 
 const Hero: React.FC = () => {
 	const { t, i18n } = useTranslation();
@@ -49,7 +49,7 @@ const Hero: React.FC = () => {
 				alignItems: "center",
 				position: "relative",
 				textAlign: "center",
-				height: "calc(100vh - 56px)",
+				minHeight: "calc(100vh - 56px)",
 				pt: 8,
 				pb: 8,
 				px: 2,

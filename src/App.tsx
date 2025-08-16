@@ -36,6 +36,7 @@ function App() {
 			sx={{
 				minHeight: minHeight || "100vh",
 				display: "flex",
+				height:'auto',
 				alignItems: "center",
 				justifyContent: "center",
 				width: "100%"
