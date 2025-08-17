@@ -19,7 +19,6 @@ i18n
   .use(initReactI18next)
   .init({
     resources,
-    fallbackLng: 'en',
     debug: false,
 
     interpolation: {

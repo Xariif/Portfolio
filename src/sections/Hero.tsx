@@ -3,16 +3,15 @@ import React, { useCallback, useState } from "react";
 import { useTranslation } from "react-i18next";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 
-import './index.css';
+import "./index.css";
 
 const Hero: React.FC = () => {
 	const { t, i18n } = useTranslation();
 	const theme = useTheme();
 	const isMobile = useMediaQuery(theme.breakpoints.down("md"));
 	const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
-	const [selectedLanguage, setSelectedLanguage] = useState<"en" | "pl">(i18n.language as "en" | "pl");
+	const [selectedLanguage, setSelectedLanguage] = useState<"en" | "pl">(i18n.language === "pl" ? "pl" : "en");
 	const open = Boolean(anchorEl);
-
 
 	const handleCVClick = useCallback((event: React.MouseEvent<HTMLElement>) => {
 		setAnchorEl(event.currentTarget);
@@ -31,7 +30,8 @@ const Hero: React.FC = () => {
 	);
 
 	const handleDirectDownload = useCallback(() => {
-		const fileName = selectedLanguage === "pl" ? "/CV_Jakub_Filiks_PL.docx" : "/CV_Jakub_Filiks_EN.docx";
+		console.log("Downloading CV in", selectedLanguage);
+		const fileName = selectedLanguage === "pl" ? "/CV_Jakub_Filiks_PL.pdf" : "./CV_Jakub_Filiks_EN.pdf";
 		const link = document.createElement("a");
 		link.href = fileName;
 		link.download = fileName;
@@ -115,11 +115,11 @@ const Hero: React.FC = () => {
 
 			<Menu anchorEl={anchorEl} open={open} onClose={handleCVClose}>
 				<MenuItem onClick={() => handleLanguageSelect("en")} selected={selectedLanguage === "en"}>
-					🇬🇧 {t("hero.cvLanguages.english")}
+					{t("hero.cvLanguages.english")}
 				</MenuItem>
 				<Divider />
 				<MenuItem onClick={() => handleLanguageSelect("pl")} selected={selectedLanguage === "pl"}>
-					🇵🇱 {t("hero.cvLanguages.polish")}
+					{t("hero.cvLanguages.polish")}
 				</MenuItem>
 			</Menu>
 		</Box>
