@@ -31,10 +31,12 @@ const Hero: React.FC = () => {
 
 	const handleDirectDownload = useCallback(() => {
 		console.log("Downloading CV in", selectedLanguage);
-		const fileName = selectedLanguage === "pl" ? "/CV_Jakub_Filiks_PL.pdf" : "./CV_Jakub_Filiks_EN.pdf";
+		const base = import.meta.env.BASE_URL || "/";
+		const filePath = selectedLanguage === "pl" ? `${base}CV_Jakub_Filiks_PL.pdf` : `${base}CV_Jakub_Filiks_EN.pdf`;
+		const downloadName = selectedLanguage === "pl" ? "CV_Jakub_Filiks_PL.pdf" : "CV_Jakub_Filiks_EN.pdf";
 		const link = document.createElement("a");
-		link.href = fileName;
-		link.download = fileName;
+		link.href = filePath;
+		link.download = downloadName;
 		document.body.appendChild(link);
 		link.click();
 		document.body.removeChild(link);
@@ -59,7 +61,9 @@ const Hero: React.FC = () => {
 		>
 			<Fade in timeout={1000}>
 				<Box>
-					<img alt="Jakub Filiks" src="/Portfolio/profile_photo.jpeg" style={{ width: 200, height: 200 }} />
+					<Box sx={{ display: "inline-block", p: 1, border: "3px solid", borderColor: "primary.main", borderRadius: 2, boxShadow: 3 }}>
+						<img alt="Jakub Filiks" src={`${import.meta.env.BASE_URL}profile_photo.jpeg`} style={{ width: 200, height: 200, display: "block", borderRadius: 8 }} />
+					</Box>
 					<Typography
 						variant="h1"
 						sx={{
