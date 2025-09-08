@@ -1,0 +1,6 @@
+---
+description: use only newest Material UI components and make sure they're allways used in responsive way
+globs:
+alwaysApply: true
+---
+

@@ -1,0 +1,7 @@
+---
+description: then you'will be creating come text contnet make sure you use t from useTranslation(); and insert translations into locales .json files 
+
+globs:
+alwaysApply: true
+---
+
