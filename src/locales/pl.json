@@ -42,7 +42,7 @@
 				"title": "Fullstack C# + React Developer",
 				"company": "Trackeo",
 				"location": "Warszawa",
-				"date": "10.2024 - obecnie (8 miesięcy)",
+				"date": "10.2024 - obecnie (1 rok)",
 				"description": "Tworzenie systemu do obsługi centrów handlowych z wykorzystaniem MongoDB, MUI i nowoczesnego stosu frontend/backend. Utrzymanie i implementacja nowych funkcji, zapewnienie jakości kodu i integracji danych.",
 				"skills": ["React", "C#", "MongoDB", "MUI"]
 			},
@@ -50,7 +50,7 @@
 				"title": "Support",
 				"company": "Trackeo",
 				"location": "Warszawa",
-				"date": "01.2022 - obecnie (3 lata 5 miesięcy)",
+				"date": "01.2022 - obecnie (3 lata 10 miesięcy)",
 				"description": "Obsługa klienta poprzez email, rozwiązywanie problemów związanych z systemem produkcyjnym, bliska komunikacja z zespołem. Narzędzia: Office Suite, Azure DevOps, Teams, Slack, FreshDesk.",
 				"skills": ["Azure DevOps", "FreshDesk", "Teams", "Slack"]
 			},
